@@ -1,0 +1,7 @@
+client/node_modules/*
+server/node_modules/*
+server/.env
+server/config/dockerfile
+server/docker-compose.yml
+client/docker-compose.yml
+server/src/uploads/*
