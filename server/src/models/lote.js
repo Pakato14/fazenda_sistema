@@ -11,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       lote.belongsTo(models.animais, { foreignKey: 'animal_id', as: 'ass_lote_animal' });
+      lote.hasMany(models.controle_animais, { foreignKey: 'lote_id', as: 'ass_lote_controle_animais' });
       lote.hasMany(models.racao, { foreignKey: 'lote_id', as: 'ass_lote_racao' });
       lote.hasMany(models.custo, { foreignKey: 'lote_id', as: 'ass_lote_custo' });
       lote.hasMany(models.aplicacao_vacina, { foreignKey: 'lote_id', as: 'ass_lote_aplicacao_vacina' });
