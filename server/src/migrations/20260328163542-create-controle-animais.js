@@ -21,6 +21,11 @@ module.exports = {
       quatidade_defeituosos: {
         type: Sequelize.INTEGER
       },
+      lote_id: {
+        allowNull: false,
+        type: Sequelize.INTEGER,
+        references: { model: 'lotes', key: 'id' }
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
