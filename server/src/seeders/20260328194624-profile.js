@@ -10,7 +10,7 @@ module.exports = {
       updatedAt: new Date()
      },
      {
-      perfil: 'Secretario',
+      perfil: 'Gerente',
       createdAt: new Date(),
       updatedAt: new Date()
      },
