@@ -1,0 +1,23 @@
+<div class="card p-3">
+  <h5>Novo Usuário</h5>
+
+  <form (ngSubmit)="salvar()">
+
+    <div class="mb-3">
+      <label>Nome</label>
+      <input #user_nome="ngModel" [(ngModel)]="user.nome" name="nome" class="form-control">
+    </div>
+
+    <div class="mb-3">
+      <label>Email</label>
+      <input #user_email="ngModel" [(ngModel)]="user.user_email" name="email" class="form-control">
+    </div>
+
+    <div class="mb-3">
+      <label>Senha</label>
+      <input #user_senha="ngModel" type="password" [(ngModel)]="user.user_password" name="senha" class="form-control">
+    </div>
+
+    <button class="btn btn-success">Salvar</button>
+  </form>
+</div>

@@ -1,0 +1,29 @@
+<div class="card p-3">
+  <div class="d-flex justify-content-between mb-3">
+    <h5>Usuários</h5>
+    <button class="btn btn-primary" routerLink="/newuser">
+      Novo
+    </button>
+  </div>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let u of usuarios">
+        <td>{{ u.nome }}</td>
+        <td>{{ u.user_email }}</td>
+        <td>
+          <button class="btn btn-sm btn-warning">Editar</button>
+          <button class="btn btn-sm btn-danger">Excluir</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
