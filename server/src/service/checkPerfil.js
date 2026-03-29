@@ -1,6 +1,6 @@
 require('dotenv').config()
 
-function checkRole(rolesPermitidos){
+function checkPerfil(rolesPermitidos){
     return (req, res, next) => {
         const profile = res.locals.user._profile_id;
         if(!rolesPermitidos.includes(profile)){
@@ -10,4 +10,4 @@ function checkRole(rolesPermitidos){
     }
 }
 
-module.exports = {checkRole : checkRole}
+module.exports = {checkPerfil : checkPerfil}
