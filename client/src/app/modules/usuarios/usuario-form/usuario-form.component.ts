@@ -4,6 +4,7 @@ import { NgForm } from '@angular/forms';
 import { User } from '../../../models/user.model';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { EmpresaService } from '../../../service/empresa.service';
 
 @Component({
   selector: 'app-usuario-form',
@@ -14,17 +15,31 @@ import { ToastrService } from 'ngx-toastr';
 export class UsuarioFormComponent implements OnInit {
   @ViewChild('formCadastroUser') formCadastroUser!: NgForm;
   user!: User;
+  empresas: any[] = [];
 
   passwordPtn = '^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$';
 
   constructor(
     private service: UserService,
+    private companyService: EmpresaService,
     private router: Router,
     private toastr: ToastrService,
   ) {}
 
   ngOnInit(): void {
     this.user = new User();
+    this.pegarEmpresas();
+  }
+
+  pegarEmpresas() {
+    this.companyService.getCompanies('takeCompany').subscribe({
+      next: (res) => {
+        this.empresas = res;
+      },
+      error: (err) => {
+        console.error(err);
+      }
+    });
   }
 
   salvar() {

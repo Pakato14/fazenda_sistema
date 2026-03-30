@@ -7,7 +7,6 @@ var checkPerfil = require('../service/checkPerfil');
 const router = Router()
 router.post('/register', UserController.cadastraUser)
 router.post('/login', UserController.login)
-router.get('/takeCompany', UserController.pegaEmpresa)
 router.get('/checkEmail/:email', UserController.checarEmail)
 router.get('/allUser', auth.authenticatedUser, checkPerfil.checkPerfil([1]), UserController.pegaUsers)
 router.put('/atualizaUser/:id', auth.authenticatedUser, checkPerfil.checkPerfil([1]), UserController.atualizaUser)

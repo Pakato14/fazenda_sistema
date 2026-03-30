@@ -26,7 +26,7 @@ class UserController {
       const salt = await bcrypt.genSalt(10);
       novoUser.user_password = await bcrypt.hash(novoUser.user_password, salt);
       novoUser.user_pin = Math.floor(1000 + Math.random() * 9000);
-      novoUser.profile_id = 4;
+      novoUser.perfil_id = 4;
       novoUser.user_active = false;
 
       const userCriado = await database.user.create(novoUser);
@@ -229,18 +229,6 @@ class UserController {
     } catch (error) {
       console.error(error);
       return res.status(500).json({ message: "Erro ao buscar usuários" });
-    }
-  }
-
-  static async pegaEmpresa(req, res) {
-    try {
-      const getCompany = await database.empresa.findAll({
-        order: ["nome"],
-        attributes: ["id", "nome", "cnpj"],
-      });
-      return res.status(200).json(getCompany);
-    } catch (error) {
-      return res.status(500).json({ message: "Empresa não encontrada" });
     }
   }
 

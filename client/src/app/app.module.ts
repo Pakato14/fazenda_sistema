@@ -13,6 +13,8 @@ import { UsuarioFormComponent } from './modules/usuarios/usuario-form/usuario-fo
 import { DatePipe } from '@angular/common';
 import { AuthInterceptor } from './service/interceptor/auth.interceptor';
 import { ToastrModule } from 'ngx-toastr';
+import { EmpresasComponent } from './modules/empresa/empresas/empresas.component';
+import { EmpresaFormComponent } from './modules/empresa/empresa-form/empresa-form.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { ToastrModule } from 'ngx-toastr';
     SidebarComponent,
     HeaderComponent,
     UsuariosComponent,
-    UsuarioFormComponent
+    UsuarioFormComponent,
+    EmpresasComponent,
+    EmpresaFormComponent
   ],
   imports: [
     BrowserModule,

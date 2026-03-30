@@ -1,0 +1,18 @@
+<div class="card p-3">
+  <h5>Nova Empresa</h5>
+
+  <form #formCadastroEmpresa="ngForm">
+
+    <div class="mb-3">
+      <label>Nome</label>
+      <input #nome="ngModel" [(ngModel)]="empresa.nome" name="nome" class="form-control">
+    </div>
+
+    <div class="mb-3">
+      <label>CNPJ</label>
+      <input #cnpj="ngModel" [(ngModel)]="empresa.cnpj" name="cnpj" class="form-control">
+    </div>
+
+    <button class="btn btn-success" (click)="salvar()">Salvar</button>
+  </form>
+</div>
