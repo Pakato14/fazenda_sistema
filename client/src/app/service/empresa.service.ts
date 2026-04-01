@@ -18,4 +18,8 @@ export class EmpresaService {
   getCompanies(metodo: string): Observable<any> {
     return this.http.get(environment.apiUrl + metodo);
   }
+
+  verificaCNPJ(cnpj: string): Observable<any> {
+    return this.http.get(environment.apiUrl + 'checkCompany/' + cnpj);
+  }
 }

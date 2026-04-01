@@ -13,7 +13,7 @@ import { EmpresaService } from '../../../service/empresa.service';
   styleUrl: './usuario-form.component.css'
 })
 export class UsuarioFormComponent implements OnInit {
-  @ViewChild('formCadastroUser') formCadastroUser!: NgForm;
+  @ViewChild('formCadastroEmpresa') formCadastroEmpresa!: NgForm;
   user!: User;
   empresas: any[] = [];
 
@@ -38,6 +38,15 @@ export class UsuarioFormComponent implements OnInit {
       },
       error: (err) => {
         console.error(err);
+      }
+    });
+  }
+
+  consultaCNPJ(cnpj: any, form: any) {
+    this.companyService.verificaCNPJ(cnpj).subscribe((res: any) => {
+      if (res.mensagem === 'CNPJ já cadastrado!') {
+        this.toastr.error(res.mensagem);
+        this.formCadastroEmpresa.reset();
       }
     });
   }

@@ -10,7 +10,8 @@
 
     <div class="mb-3">
       <label>CNPJ</label>
-      <input #cnpj="ngModel" [(ngModel)]="empresa.cnpj" name="cnpj" class="form-control">
+      <input #cnpj="ngModel" [(ngModel)]="empresa.cnpj" name="cnpj" class="form-control" mask="00.000.000/0000-00"
+            (blur)="consultaCNPJ(empresa.cnpj, formCadastroEmpresa)">
     </div>
 
     <button class="btn btn-success" (click)="salvar()">Salvar</button>

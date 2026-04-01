@@ -12,6 +12,9 @@ import { NgForm } from '@angular/forms';
   styleUrl: './empresa-form.component.css'
 })
 export class EmpresaFormComponent implements OnInit {
+consultaCNPJ(arg0: string|undefined,_t20: NgForm) {
+throw new Error('Method not implemented.');
+}
   @ViewChild('formCadastroEmpresa') formCadastroEmpresa!: NgForm;
   empresa!: Empresa;
 
