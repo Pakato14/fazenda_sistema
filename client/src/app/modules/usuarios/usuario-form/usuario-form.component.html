@@ -10,7 +10,7 @@
 
     <div class="mb-3">
       <label>Email</label>
-      <input #user_email="ngModel" [(ngModel)]="user.user_email" name="email" class="form-control">
+      <input #user_email="ngModel" [(ngModel)]="user.user_email" name="email" class="form-control" (blur)="consultaEmail(user.user_email, formCadastroUser)">
     </div>
 
     <div class="mb-3">

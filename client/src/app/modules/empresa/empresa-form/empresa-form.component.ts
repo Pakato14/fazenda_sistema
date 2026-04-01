@@ -12,9 +12,6 @@ import { NgForm } from '@angular/forms';
   styleUrl: './empresa-form.component.css'
 })
 export class EmpresaFormComponent implements OnInit {
-consultaCNPJ(arg0: string|undefined,_t20: NgForm) {
-throw new Error('Method not implemented.');
-}
   @ViewChild('formCadastroEmpresa') formCadastroEmpresa!: NgForm;
   empresa!: Empresa;
 
@@ -27,6 +24,16 @@ throw new Error('Method not implemented.');
   ngOnInit(): void {
     this.empresa = new Empresa();
   }
+
+  consultaCNPJ(cnpj: any, form: any) {
+    this.companyService.verificaCNPJ(cnpj).subscribe((res: any) => {
+      if (res.mensagem === 'CNPJ já cadastrado!') {
+        this.toastr.error(res.mensagem);
+        this.formCadastroEmpresa.reset();
+      }
+    });
+  }
+
 
   salvar() {
     console.log('dados_empresa', this.empresa);
