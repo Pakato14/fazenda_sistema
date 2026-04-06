@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../service/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
@@ -25,24 +26,46 @@ export class SidebarComponent implements OnInit {
     {
       label: 'Operacional',
       icon: 'fa-cogs',
-      roles: [1,2,3],
+      roles: [1, 2, 3],
       children: [
         { label: 'Lotes', route: '/lotes' },
-        { label: 'Controle', route: '/controle' }
-      ]
-    }
+        { label: 'Controle', route: '/controle' },
+      ],
+    },
   ];
 
   constructor(
-      private serviceUser: UserService,
-    ) { }
+    private serviceUser: UserService,
+    private router: Router,
+  ) {}
 
-  ngOnInit(){
+  isActive(route: string): boolean {
+    return this.router.url.includes(route);
+  }
+
+  isParentActive(children: any[]): boolean {
+    return children.some((child) => this.router.url.includes(child.route));
+  }
+
+  ngOnInit() {
     const saved = localStorage.getItem('sidebar_collapsed');
     this.collapsed = saved === 'true';
 
-    const user = this.serviceUser.getUser() || '{}';
-    this.perfil_id = user._profile_id;
+    const user = this.serviceUser.getUser();
+    this.perfil_id = user._profile_id|| 0;
+
+    // const user = this.serviceUser.getUser() || '{}';
+    // this.perfil_id = user._profile_id;
+
+    this.abrirMenuAtivo();
+  }
+
+  abrirMenuAtivo() {
+    this.menu.forEach((item) => {
+      if (this.isParentActive(item.children)) {
+        this.menuOpen[item.label] = true;
+      }
+    });
   }
 
   toggleSidebar() {
