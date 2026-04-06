@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { BehaviorSubject, map, Observable, tap } from 'rxjs';
 import { Md5 } from 'ts-md5';
 import { environment } from '../../environments/environment';
+import { jwtDecode } from 'jwt-decode';
 
 @Injectable({
   providedIn: 'root'
@@ -65,7 +66,7 @@ export class UserService {
         const decoded = jwtDecode(response.token);
         this.userSubject.next(decoded);
 
-        this.router.navigate(['/admin']);
+        this.router.navigate(['/usuarios']);
       })
     );
   }
@@ -112,8 +113,5 @@ export class UserService {
     reset_password(data:any) : Observable<any> {
       return this.http.post(environment.apiUrl + 'reset', data)
     }
-}
-function jwtDecode(token: any) {
-  throw new Error('Function not implemented.');
 }
 
