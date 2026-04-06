@@ -1,19 +1,48 @@
 .sidebar {
   width: 250px;
   height: 100vh;
-  background: #343a40;
+  background: #2f353a;
   color: white;
-  transition: all 0.3s;
+  transition: width 0.3s ease;
+  overflow: hidden;
 }
 
 .sidebar.collapsed {
   width: 70px;
 }
 
-.sidebar .nav-link {
-  color: white;
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
 }
 
-.sidebar .nav-link:hover {
+.menu {
+  list-style: none;
+  padding: 0;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.menu-item:hover {
   background: rgba(255,255,255,0.1);
+}
+
+.submenu {
+  list-style: none;
+  padding-left: 20px;
+  animation: fadeIn 0.3s ease;
+}
+
+.submenu li a {
+  display: block;
+  padding: 6px 0;
+  color: #ccc;
+  text-decoration: none;
 }

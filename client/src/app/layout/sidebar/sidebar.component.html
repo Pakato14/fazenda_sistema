@@ -1,26 +1,31 @@
-<div
-  [ngClass]="collapsed ? 'sidebar collapsed' : 'sidebar'">
+<div class="sidebar" [class.collapsed]="collapsed">
 
-  <div class="p-3 d-flex justify-content-between align-items-center">
+  <div class="sidebar-header">
     <span *ngIf="!collapsed">Sistema</span>
-    <button class="btn btn-sm btn-light" (click)="toggle()">
+    <button (click)="toggleSidebar()">
       <i class="fa" [ngClass]="collapsed ? 'fa-bars' : 'fa-times'"></i>
     </button>
   </div>
 
-  <ul class="nav flex-column mt-3">
-    <li class="nav-item">
-      <a class="nav-link text-white" routerLink="/usuarios">
-        <i class="fa fa-users"></i>
-        <span *ngIf="!collapsed"> Usuários</span>
-      </a>
-    </li>
+  <ul class="menu">
 
-    <li class="nav-item">
-      <a class="nav-link text-white" routerLink="/empresas">
-        <i class="fa fa-building"></i>
-        <span *ngIf="!collapsed"> Empresas</span>
-      </a>
-    </li>
+    <ng-container *ngFor="let item of menu">
+      <li *ngIf="hasAccess(item)">
+
+        <div class="menu-item" (click)="toggleMenu(item.label)">
+          <i class=" pe-3 fa" [ngClass]="item.icon"></i>
+          <span *ngIf="!collapsed">{{ item.label }}</span>
+          <i class="fa fa-chevron-down ms-auto" *ngIf="!collapsed"></i>
+        </div>
+
+        <ul class="submenu" *ngIf="menuOpen[item.label] && !collapsed">
+          <li *ngFor="let sub of item.children">
+            <a [routerLink]="sub.route">{{ sub.label }}</a>
+          </li>
+        </ul>
+
+      </li>
+    </ng-container>
+
   </ul>
 </div>
