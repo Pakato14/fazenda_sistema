@@ -4,7 +4,7 @@ import { BrowserModule, provideClientHydration } from '@angular/platform-browser
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LayoutComponent } from './layout/layout/layout.component';
 import { SidebarComponent } from './layout/sidebar/sidebar.component';
 import { HeaderComponent } from './layout/header/header.component';
@@ -15,6 +15,8 @@ import { AuthInterceptor } from './service/interceptor/auth.interceptor';
 import { ToastrModule } from 'ngx-toastr';
 import { EmpresasComponent } from './modules/empresa/empresas/empresas.component';
 import { EmpresaFormComponent } from './modules/empresa/empresa-form/empresa-form.component';
+import { LoginComponent } from './modules/usuarios/login/login.component';
+import { ResetSenhaComponent } from './modules/usuarios/reset-senha/reset-senha.component';
 
 @NgModule({
   declarations: [
@@ -25,13 +27,16 @@ import { EmpresaFormComponent } from './modules/empresa/empresa-form/empresa-for
     UsuariosComponent,
     UsuarioFormComponent,
     EmpresasComponent,
-    EmpresaFormComponent
+    EmpresaFormComponent,
+    LoginComponent,
+    ResetSenhaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     ToastrModule.forRoot(),
   ],
   providers: [
