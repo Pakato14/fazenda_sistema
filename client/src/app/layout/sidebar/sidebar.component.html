@@ -1,16 +1,25 @@
-<div class="bg-dark text-white p-3" style="width: 250px; height: 100vh;">
-  <h4>Sistema</h4>
+<div
+  [ngClass]="collapsed ? 'sidebar collapsed' : 'sidebar'">
 
-  <ul class="nav flex-column mt-4">
+  <div class="p-3 d-flex justify-content-between align-items-center">
+    <span *ngIf="!collapsed">Sistema</span>
+    <button class="btn btn-sm btn-light" (click)="toggle()">
+      <i class="fa" [ngClass]="collapsed ? 'fa-bars' : 'fa-times'"></i>
+    </button>
+  </div>
+
+  <ul class="nav flex-column mt-3">
     <li class="nav-item">
       <a class="nav-link text-white" routerLink="/usuarios">
-        <i class="fa fa-users"></i> Usuários
+        <i class="fa fa-users"></i>
+        <span *ngIf="!collapsed"> Usuários</span>
       </a>
     </li>
 
     <li class="nav-item">
       <a class="nav-link text-white" routerLink="/empresas">
-        <i class="fa fa-building"></i> Empresas
+        <i class="fa fa-building"></i>
+        <span *ngIf="!collapsed"> Empresas</span>
       </a>
     </li>
   </ul>
