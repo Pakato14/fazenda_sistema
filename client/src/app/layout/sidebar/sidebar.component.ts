@@ -21,6 +21,7 @@ export class SidebarComponent implements OnInit {
       children: [
         { label: 'Usuários', route: '/usuarios', icon: 'fa-user' },
         { label: 'Empresas', route: '/empresas', icon: 'fa-building' },
+        { label: 'Animais', route: '/animais', icon: 'fa-paw' },
       ],
     },
     {

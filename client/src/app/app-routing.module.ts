@@ -6,6 +6,7 @@ import { EmpresaFormComponent } from './modules/empresa/empresa-form/empresa-for
 import { LoginComponent } from './modules/usuarios/login/login.component';
 import { ResetSenhaComponent } from './modules/usuarios/reset-senha/reset-senha.component';
 import { EmpresasComponent } from './modules/empresa/empresas/empresas.component';
+import { CadastroAnimaisComponent } from './modules/animiais/cadastro-animais/cadastro-animais.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'newuser', component: UsuarioFormComponent },
   { path: 'empresas', component: EmpresasComponent },
   { path: 'newcompany', component: EmpresaFormComponent },
+  { path: 'animais', component: CadastroAnimaisComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' }
 ];
 
