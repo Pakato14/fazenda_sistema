@@ -17,6 +17,10 @@ import { EmpresasComponent } from './modules/empresa/empresas/empresas.component
 import { EmpresaFormComponent } from './modules/empresa/empresa-form/empresa-form.component';
 import { LoginComponent } from './modules/usuarios/login/login.component';
 import { ResetSenhaComponent } from './modules/usuarios/reset-senha/reset-senha.component';
+import { CadastroAnimaisComponent } from './modules/animiais/cadastro-animais/cadastro-animais.component';
+import { RacaoComponent } from './modules/animiais/racao/racao.component';
+import { ControleAnimaisComponent } from './modules/animiais/controle-animais/controle-animais.component';
+import { CadastroLoteComponent } from './modules/animiais/cadastro-lote/cadastro-lote.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +33,11 @@ import { ResetSenhaComponent } from './modules/usuarios/reset-senha/reset-senha.
     EmpresasComponent,
     EmpresaFormComponent,
     LoginComponent,
-    ResetSenhaComponent
+    ResetSenhaComponent,
+    CadastroAnimaisComponent,
+    RacaoComponent,
+    ControleAnimaisComponent,
+    CadastroLoteComponent
   ],
   imports: [
     BrowserModule,
