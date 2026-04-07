@@ -1,0 +1,18 @@
+<div class="card p-3">
+  <h5>Cadastro tipo de Vacina</h5>
+
+  <form #formCadastroVacina="ngForm">
+
+    <div class="mb-3">
+      <label>Tipo</label>
+      <input #nome="ngModel" [(ngModel)]="vacina.nome" name="nome" class="form-control">
+    </div>
+
+    <div class="mb-3">
+      <label>Custo por Kg</label>
+      <input type="number" #dias_aplicacao="ngModel" [(ngModel)]="vacina.dias_aplicacao" name="dias_aplicacao" class="form-control">
+    </div>
+
+    <button class="btn btn-success" (click)="salvar()">Salvar</button>
+  </form>
+</div>
