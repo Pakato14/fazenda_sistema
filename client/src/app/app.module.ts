@@ -17,11 +17,16 @@ import { EmpresasComponent } from './modules/empresa/empresas/empresas.component
 import { EmpresaFormComponent } from './modules/empresa/empresa-form/empresa-form.component';
 import { LoginComponent } from './modules/usuarios/login/login.component';
 import { ResetSenhaComponent } from './modules/usuarios/reset-senha/reset-senha.component';
-import { CadastroAnimaisComponent } from './modules/animiais/cadastro-animais/cadastro-animais.component';
-import { RacaoComponent } from './modules/animiais/racao/racao.component';
-import { ControleAnimaisComponent } from './modules/animiais/controle-animais/controle-animais.component';
-import { CadastroLoteComponent } from './modules/animiais/cadastro-lote/cadastro-lote.component';
+import { CadastroAnimaisComponent } from './modules/animais/cadastro-animais/cadastro-animais.component';
+import { RacaoComponent } from './modules/animais/racao/racao.component';
+import { ControleAnimaisComponent } from './modules/animais/controle-animais/controle-animais.component';
+import { CadastroLoteComponent } from './modules/animais/cadastro-lote/cadastro-lote.component';
 import { NgxMaskModule } from 'ngx-mask';
+import { CadastroVacinaComponent } from './modules/animais/cadastro-vacina/cadastro-vacina.component';
+import { CadastroRacaoComponent } from './modules/animais/cadastro-racao/cadastro-racao.component';
+import { CadastroCustosComponent } from './modules/animais/cadastro-custos/cadastro-custos.component';
+import { DashboardComponent } from './modules/operacional/dashboard/dashboard.component';
+import { CadastroTipocustosComponent } from './modules/animais/cadastro-tipocustos/cadastro-tipocustos.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +43,12 @@ import { NgxMaskModule } from 'ngx-mask';
     CadastroAnimaisComponent,
     RacaoComponent,
     ControleAnimaisComponent,
-    CadastroLoteComponent
+    CadastroLoteComponent,
+    CadastroVacinaComponent,
+    CadastroRacaoComponent,
+    CadastroCustosComponent,
+    DashboardComponent,
+    CadastroTipocustosComponent
   ],
   imports: [
     BrowserModule,
