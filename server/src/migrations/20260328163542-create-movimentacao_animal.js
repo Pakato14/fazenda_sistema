@@ -2,7 +2,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('controle_animais', {
+    await queryInterface.createTable('movimentacao_animal', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -12,14 +12,14 @@ module.exports = {
       data: {
         type: Sequelize.DATE
       },
-      quatidade_vivos: {
+      tipo_movimentacao: {
+        type: Sequelize.STRING
+      },
+      quatidade: {
         type: Sequelize.INTEGER
       },
-      quatidade_mortos: {
-        type: Sequelize.INTEGER
-      },
-      quatidade_defeituosos: {
-        type: Sequelize.INTEGER
+      observacao: {
+        type: Sequelize.STRING
       },
       lote_id: {
         allowNull: false,
@@ -37,6 +37,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('controle_animais');
+    await queryInterface.dropTable('movimentacao_animal');
   }
 };

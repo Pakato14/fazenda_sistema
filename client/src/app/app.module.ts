@@ -21,6 +21,7 @@ import { CadastroAnimaisComponent } from './modules/animiais/cadastro-animais/ca
 import { RacaoComponent } from './modules/animiais/racao/racao.component';
 import { ControleAnimaisComponent } from './modules/animiais/controle-animais/controle-animais.component';
 import { CadastroLoteComponent } from './modules/animiais/cadastro-lote/cadastro-lote.component';
+import { NgxMaskModule } from 'ngx-mask';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { CadastroLoteComponent } from './modules/animiais/cadastro-lote/cadastro
     FormsModule,
     ReactiveFormsModule,
     ToastrModule.forRoot(),
+    NgxMaskModule.forRoot(),
   ],
   providers: [
     provideClientHydration(),

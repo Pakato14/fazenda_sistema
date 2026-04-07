@@ -3,24 +3,24 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class controle_animais extends Model {
+  class movimentacao_animal extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      controle_animais.belongsTo(models.lote, { foreignKey: 'lote_id', as: 'ass_controle_animais_lote' });
+      movimentacao_animal.belongsTo(models.lote, { foreignKey: 'lote_id', as: 'ass_movimentacao_animal_lote' });
     }
   }
-  controle_animais.init({
+  movimentacao_animal.init({
     data: DataTypes.DATE,
-    quatidade_vivos: DataTypes.INTEGER,
-    quatidade_mortos: DataTypes.INTEGER,
-    quatidade_defeituosos: DataTypes.INTEGER
+    tipo_movimentacao: DataTypes.STRING,
+    quatidade: DataTypes.INTEGER,
+    observacao: DataTypes.STRING
   }, {
     sequelize,
-    modelName: 'controle_animais',
+    modelName: 'movimentacao_animal',
   });
-  return controle_animais;
+  return movimentacao_animal;
 };

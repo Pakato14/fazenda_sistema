@@ -5,12 +5,22 @@
 
     <div class="mb-3">
       <label>Nome</label>
-      <input #user_nome="ngModel" [(ngModel)]="user.nome" name="nome" class="form-control">
+      <input #nome="ngModel" [(ngModel)]="user.nome" name="nome" class="form-control">
+    </div>
+
+    <div class="mb-3">
+      <label>Apelido</label>
+      <input #user_nome="ngModel" [(ngModel)]="user.user_name" name="user_name" class="form-control">
     </div>
 
     <div class="mb-3">
       <label>Email</label>
       <input #user_email="ngModel" [(ngModel)]="user.user_email" name="email" class="form-control" (blur)="consultaEmail(user.user_email, formCadastroUser)">
+    </div>
+
+    <div class="mb-3">
+      <label>CPF</label>
+      <input #cpf="ngModel" [(ngModel)]="user.cpf" name="cpf" class="form-control" mask="000.000.000-00">
     </div>
 
     <div class="mb-3">

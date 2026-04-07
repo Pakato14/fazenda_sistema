@@ -3,6 +3,7 @@ export class User {
     public id?: number,
     public nome?: string,
     public user_name?: string,
+    public cpf?: string,
     public user_email?: string,
     public user_active?: boolean,
     public user_pin?: boolean,

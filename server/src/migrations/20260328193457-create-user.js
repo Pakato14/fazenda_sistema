@@ -34,6 +34,9 @@ module.exports = {
       user_pin: {
         type: Sequelize.STRING
       },
+      cpf: {
+        type: Sequelize.STRING
+      },
       perfil_id: {
         allowNull: true,
         type: Sequelize.INTEGER,

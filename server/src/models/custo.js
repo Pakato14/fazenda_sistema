@@ -11,13 +11,14 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       custo.belongsTo(models.lote, { foreignKey: 'lote_id', as: 'ass_custo_lote' });
+      custo.belongsTo(models.tipo_custo, { foreignKey: 'tipo_custo_id', as: 'ass_custo_tipo_custo' });
     }
   }
   custo.init({
     tipo: DataTypes.STRING,
     descricao: DataTypes.STRING,
     valor: DataTypes.DECIMAL(10,2),
-    data: DataTypes.DATE
+    data: DataTypes.DATEONLY
   }, {
     sequelize,
     modelName: 'custo',
