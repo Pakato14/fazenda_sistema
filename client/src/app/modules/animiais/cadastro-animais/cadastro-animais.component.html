@@ -1,1 +1,13 @@
-<p>cadastro-animais works!</p>
+<div class="card p-3">
+  <h5>Cadastro tipo de Criação</h5>
+
+  <form #formCadastroAnimal="ngForm">
+
+    <div class="mb-3">
+      <label>Tipo</label>
+      <input #nome="ngModel" [(ngModel)]="animal.tipo" name="tipo" class="form-control">
+    </div>
+
+    <button class="btn btn-success" (click)="salvar()">Salvar</button>
+  </form>
+</div>
