@@ -1,0 +1,18 @@
+<div class="card p-3">
+  <h5>Cadastro tipo de Ração</h5>
+
+  <form #formCadastroRacao="ngForm">
+
+    <div class="mb-3">
+      <label>Tipo</label>
+      <input #tipo_racao="ngModel" [(ngModel)]="racao.tipo_racao" name="tipo_racao" class="form-control">
+    </div>
+
+    <div class="mb-3">
+      <label>Custo por Kg</label>
+      <input type="number" #custo_por_kg="ngModel" [(ngModel)]="racao.custo_por_kg" name="custo_por_kg" class="form-control">
+    </div>
+
+    <button class="btn btn-success" (click)="salvar()">Salvar</button>
+  </form>
+</div>
