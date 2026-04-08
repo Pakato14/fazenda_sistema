@@ -24,7 +24,6 @@ import { CadastroLoteComponent } from './modules/animais/cadastro-lote/cadastro-
 import { NgxMaskModule } from 'ngx-mask';
 import { CadastroVacinaComponent } from './modules/animais/cadastro-vacina/cadastro-vacina.component';
 import { CadastroRacaoComponent } from './modules/animais/cadastro-racao/cadastro-racao.component';
-import { CadastroCustosComponent } from './modules/animais/cadastro-custos/cadastro-custos.component';
 import { DashboardComponent } from './modules/dataview/dashboard/dashboard.component';
 import { CadastroTipocustosComponent } from './modules/animais/cadastro-tipocustos/cadastro-tipocustos.component';
 import { NgxApexchartsModule } from 'ngx-apexcharts';
@@ -51,7 +50,6 @@ import { AplicacaoVacinaComponent } from './modules/operacional/aplicacao-vacina
     CadastroLoteComponent,
     CadastroVacinaComponent,
     CadastroRacaoComponent,
-    CadastroCustosComponent,
     DashboardComponent,
     CadastroTipocustosComponent,
     CadastroCustoComponent,

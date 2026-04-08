@@ -1,1 +1,44 @@
-<p>cadastro-custo works!</p>
+<div class="card p-3">
+  <h5>Cadastro tipo de Criação</h5>
+
+  <form #formCadastroCustos="ngForm">
+
+    <div class="mb-3">
+      <label>Tipo</label>
+      <input #tipo="ngModel" [(ngModel)]="custo.tipo" name="tipo" class="form-control">
+    </div>
+
+    <div class="mb-3">
+      <label>Descrição</label>
+      <input #descricao="ngModel" [(ngModel)]="custo.descricao" name="descricao" class="form-control">
+    </div>
+
+    <div class="mb-3">
+      <label>Valor</label>
+      <input #valor="ngModel" [(ngModel)]="custo.valor" name="valor" class="form-control">
+    </div>
+
+    <div class="mb-3">
+      <label>Data</label>
+      <input type="date" #data="ngModel" [(ngModel)]="custo.data" name="data" class="form-control">
+    </div>
+
+    <div class="mb-3">
+      <label for="lote_id">Lote</label>
+      <select name="lote_id" id="lote_id" [(ngModel)]="custo.lote_id" #lote_id="ngModel"  class="form-control">
+        <option value="">Selecione</option>
+        <option *ngFor="let lote of listaLotes" [value]=lote.id>{{ lote.nome }}</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label for="tipo_custo_id">Tipo de Custo</label>
+      <select name="tipo_custo_id" id="tipo_custo_id" [(ngModel)]="custo.tipo_custo_id" #tipo_custo_id="ngModel"  class="form-control">
+        <option value="">Selecione</option>
+        <option *ngFor="let tipo of listaTipoCusto" [value]=tipo.id>{{ tipo.nome }}</option>
+      </select>
+    </div>
+
+    <button class="btn btn-success" (click)="salvar()">Salvar</button>
+  </form>
+</div>
