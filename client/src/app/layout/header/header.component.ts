@@ -30,7 +30,6 @@ export class HeaderComponent implements OnInit {
   }
 
   updateUserInfo(user: any) {
-    console.log('User info updated:', user);
     if (!user) {
       this.authenticated = false;
       this.user_name = '';

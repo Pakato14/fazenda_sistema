@@ -80,7 +80,6 @@ export class UserService {
   // ------ REQUISIÇÕES ------ //
 
     cadastrar_users(data:any):Observable<any> {
-      console.log(environment);
       return this.http.post(environment.apiUrl + 'register', data)
     }
 
