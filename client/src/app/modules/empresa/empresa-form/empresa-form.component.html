@@ -1,5 +1,5 @@
 <div class="card p-3">
-  <h5>Nova Empresa</h5>
+  <h5>{{ isEdit ? 'Editar Empresa' : 'Nova Empresa' }}</h5>
 
   <form #formCadastroEmpresa="ngForm">
 
@@ -14,6 +14,7 @@
             (blur)="consultaCNPJ(empresa.cnpj, formCadastroEmpresa)">
     </div>
 
-    <button class="btn btn-success" (click)="salvar()">Salvar</button>
+    <button class="btn btn-success me-4" (click)="salvar()">Salvar</button>
+    <button *ngIf="isEdit" class="btn btn-secondary" (click)="cancelar()">Cancelar</button>
   </form>
 </div>

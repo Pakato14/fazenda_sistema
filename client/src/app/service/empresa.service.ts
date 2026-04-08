@@ -21,4 +21,16 @@ export class EmpresaService {
   verificaCNPJ(cnpj: string): Observable<any> {
     return this.http.get(environment.apiUrl + 'checkCompany/' + cnpj);
   }
+
+  atualizarEmpresa(data: any, id: number): Observable<any> {
+    return this.http.put(environment.apiUrl + 'atualizaEmpresa/' + id, data);
+  }
+
+  deletarEmpresa(id: number): Observable<any> {
+    return this.http.delete(environment.apiUrl + 'empresa/' + id);
+  }
+
+  pegarEmpresaPorId(id: number): Observable<any> {
+    return this.http.get(environment.apiUrl + 'empresa/' + id);
+  }
 }

@@ -25,6 +25,7 @@ const routes: Routes = [
   { path: 'edituser/:id', component: UsuarioFormComponent },
   { path: 'empresas', component: EmpresasComponent },
   { path: 'newcompany', component: EmpresaFormComponent },
+  { path: 'editcompany/:id', component: EmpresaFormComponent },
   { path: 'animais', component: CadastroAnimaisComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'tipocusto', component: CadastroTipocustosComponent },
