@@ -11,7 +11,6 @@ export class EmpresaService {
   constructor(private http: HttpClient) {}
 
   cadastrarEmpresa(data: any): Observable<any> {
-    console.log('dados_empresa', data);
     return this.http.post(environment.apiUrl + 'registercompany', data);
   }
 

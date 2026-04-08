@@ -1,0 +1,53 @@
+<div class="container">
+
+  <h2>📊 Dashboard da Granja</h2>
+
+  <!-- KPIs -->
+  <div class="cards">
+
+    <div class="card">
+      <h3>🐔 Vivos</h3>
+      <p>{{ resumo?.quantidadeAtual }}</p>
+    </div>
+
+    <div class="card">
+      <h3>☠️ Mortos</h3>
+      <p>{{ resumo?.mortos }}</p>
+    </div>
+
+    <div class="card">
+      <h3>⚠️ Defeitos</h3>
+      <p>{{ resumo?.defeitos }}</p>
+    </div>
+
+    <div class="card">
+      <h3>💰 Custo</h3>
+      <p>R$ {{ resumo?.custoTotal | number:'1.2-2' }}</p>
+    </div>
+
+  </div>
+
+  <!-- Gráficos -->
+  <div class="charts">
+
+    <div class="chart">
+      <apx-chart
+        *ngIf="chartPie"
+        [series]="chartPie.series"
+        [chart]="chartPie.chart"
+        [labels]="chartPie.labels">
+      </apx-chart>
+    </div>
+
+    <div class="chart">
+      <apx-chart
+        *ngIf="chartBar"
+        [series]="chartBar.series"
+        [chart]="chartBar.chart"
+        [xaxis]="chartBar.xaxis">
+      </apx-chart>
+    </div>
+
+  </div>
+
+</div>

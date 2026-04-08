@@ -32,7 +32,19 @@ export class SidebarComponent implements OnInit {
       icon: 'fa-cogs',
       roles: [1, 2, 3],
       children: [
-        { label: 'Lotes', route: '/lotes' },
+        { label: 'Lotes', route: '/cadastrolotes' },
+        { label: 'Movimentação', route: '/movimentacao' },
+        { label: 'Consumo de Ração', route: '/consumoracao' },
+        { label: 'Aplicação de Vacinas', route: '/aplicacaovacina' },
+        { label: 'Custos', route: '/custos' },
+      ],
+    },
+    {
+      label: 'Dashboard',
+      icon: 'fa-chart-simple',
+      roles: [1, 2, 3],
+      children: [
+        { label: 'Lote', route: '/dashboard' },
         { label: 'Controle', route: '/controle' },
       ],
     },

@@ -14,11 +14,11 @@ class OperacionalControllers {
 
   static async registerTipoCusto(req, res) {
     const newTypeCoast = req.body;
-    // console.log('newTypeCoast', newTypeCoast);
     try {
-      const novoTipoCusto = await database.tipo_custos.create(newTypeCoast);
+      const novoTipoCusto = await database.tipo_custo.create(newTypeCoast);
       return res.status(200).json(novoTipoCusto);
     } catch (error) {
+      console.log('error', error);
       return res.status(500).json(error.message);
     }
   }
@@ -95,6 +95,85 @@ class OperacionalControllers {
     try {
       const novaAplicacaoVacina = await database.aplicacao_vacinas.create(newVaccineApplication);
       return res.status(200).json(novaAplicacaoVacina);
+    } catch (error) {
+      return res.status(500).json(error.message);
+    }
+  }
+
+  //MÉTODOS GET
+  static async getAnimais(req, res) {
+    try {
+      const animais = await database.animais.findAll({
+        order: [["tipo", "ASC"]],
+        attributes: ["id", "tipo"],
+      });
+
+      return res.status(200).json(animais);
+    } catch (error) {
+      return res.status(500).json(error.message);
+    }
+  }
+
+  static async getTiposCusto(req, res) {
+    try {
+      const tiposCusto = await database.tipo_custo.findAll({
+        order: [["nome", "ASC"]],
+        attributes: ["id", "nome"],
+      });
+
+      return res.status(200).json(tiposCusto);
+    } catch (error) {
+      return res.status(500).json(error.message);
+    }
+  }
+
+  static async getRacoes(req, res) {
+    try {
+      const racoes = await database.racaos.findAll({
+        order: [["tipo_racao", "ASC"]],
+        attributes: ["id", "tipo_racao", "custo_por_kg"],
+      });
+
+      return res.status(200).json(racoes);
+    } catch (error) {
+      return res.status(500).json(error.message);
+    }
+  }
+
+  static async getLotes(req, res) {
+    try {
+      const lotes = await database.lotes.findAll({
+        order: [["numero_registro", "ASC"]],
+        attributes: ["id", "numero_registro", "nome_lote", "data_nascimento", "valor_cabeca", "quantidade_inicial", "observacao"],
+        include: [
+          { association: "ass_lote_animal",
+            attributes: ["id", "tipo"]
+          }
+        ],
+      });
+
+      return res.status(200).json(lotes);
+    } catch (error) {
+      return res.status(500).json(error.message);
+    }
+  }
+
+  static async getCustos(req, res) {
+    try {
+      const lotes = await database.custos.findAll({
+        order: [["tipo", "ASC"]],
+        attributes: ["id", "tipo", "descricao", "valor", "data"],
+        include: [
+          { association: "ass_custo_lote",
+            attributes: ["id", "numero_registro", "nome_lote", "data_nascimento", "valor_cabeca", "quantidade_inicial", "observacao"],
+          },
+          { association: "ass_custo_tipo_custo",
+            attributes: ["id", "nome"],
+          }
+        ],
+      });
+
+      return res.status(200).json(lotes);
     } catch (error) {
       return res.status(500).json(error.message);
     }

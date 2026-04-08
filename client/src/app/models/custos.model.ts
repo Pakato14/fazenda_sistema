@@ -5,6 +5,8 @@ export class Custo {
     public descricao?: string,
     public valor?: number,
     public data?: Date,
-    public lote_id?: number
+    public lote_id?: number,
+    public tipo_custo_id?: number
+
   ) {}
 }

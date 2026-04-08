@@ -15,7 +15,12 @@ export class OperacionalService {
     }
 
   registerTipoCusto(data: any): Observable<any> {
+    console.log('dados service', data);
       return this.http.post(environment.apiUrl + 'cadastroTipoCusto', data);
+    }
+
+  registerCusto(data: any): Observable<any> {
+      return this.http.post(environment.apiUrl + 'cadastroCustos', data);
     }
 
   registerTipoVacina(data: any): Observable<any> {
@@ -24,5 +29,9 @@ export class OperacionalService {
 
   registerTipoRacao(data: any): Observable<any> {
       return this.http.post(environment.apiUrl + 'cadastroRacao', data);
+    }
+
+    getOperacional(metodo: any): Observable<any> {
+      return this.http.get(environment.apiUrl + metodo);
     }
 }

@@ -25,8 +25,13 @@ import { NgxMaskModule } from 'ngx-mask';
 import { CadastroVacinaComponent } from './modules/animais/cadastro-vacina/cadastro-vacina.component';
 import { CadastroRacaoComponent } from './modules/animais/cadastro-racao/cadastro-racao.component';
 import { CadastroCustosComponent } from './modules/animais/cadastro-custos/cadastro-custos.component';
-import { DashboardComponent } from './modules/operacional/dashboard/dashboard.component';
+import { DashboardComponent } from './modules/dataview/dashboard/dashboard.component';
 import { CadastroTipocustosComponent } from './modules/animais/cadastro-tipocustos/cadastro-tipocustos.component';
+import { NgxApexchartsModule } from 'ngx-apexcharts';
+import { CadastroCustoComponent } from './modules/operacional/cadastro-custo/cadastro-custo.component';
+import { MovimentacaoComponent } from './modules/operacional/movimentacao/movimentacao.component';
+import { ConsumoRacaoComponent } from './modules/operacional/consumo-racao/consumo-racao.component';
+import { AplicacaoVacinaComponent } from './modules/operacional/aplicacao-vacina/aplicacao-vacina.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +53,11 @@ import { CadastroTipocustosComponent } from './modules/animais/cadastro-tipocust
     CadastroRacaoComponent,
     CadastroCustosComponent,
     DashboardComponent,
-    CadastroTipocustosComponent
+    CadastroTipocustosComponent,
+    CadastroCustoComponent,
+    MovimentacaoComponent,
+    ConsumoRacaoComponent,
+    AplicacaoVacinaComponent
   ],
   imports: [
     BrowserModule,
@@ -58,6 +67,7 @@ import { CadastroTipocustosComponent } from './modules/animais/cadastro-tipocust
     ReactiveFormsModule,
     ToastrModule.forRoot(),
     NgxMaskModule.forRoot(),
+    NgxApexchartsModule
   ],
   providers: [
     provideClientHydration(),
