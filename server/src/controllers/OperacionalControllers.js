@@ -104,7 +104,7 @@ class OperacionalControllers {
   static async getAnimais(req, res) {
     try {
       const animais = await database.animais.findAll({
-        order: [["tipo", "ASC"]],
+        order: [["id", "ASC"]],
         attributes: ["id", "tipo"],
       });
 
@@ -178,6 +178,46 @@ class OperacionalControllers {
       return res.status(500).json(error.message);
     }
   }
+
+
+  //MÉTODOS UPDATE
+
+  static async updateAnimal(req, res) {
+    const id = req.params.id;
+    const updatedAnimal = req.body;
+
+    try {
+      const animal = await database.animais.findByPk(id);
+      if (!animal) {
+        return res.status(404).json({ message: "Animal não encontrado" });
+      }
+
+      await animal.update(updatedAnimal);
+      return res.status(200).json(animal);
+    } catch (error) {
+      return res.status(500).json(error.message);
+    }
+  }
+
+
+  //MÉTODOS DE EXCLUIR
+  static async deleteAnimal(req, res) {
+    const id = req.params.id;
+
+    try {
+      const animal = await database.animais.findByPk(id);
+      if (!animal) {
+        return res.status(404).json({ message: "Animal não encontrado" });
+      }
+
+      await animal.destroy();
+      return res.status(200).json({ message: "Animal excluído com sucesso" });
+    } catch (error) {
+      return res.status(500).json(error.message);
+    }
+  }
+
+
 }
 
 module.exports = OperacionalControllers;

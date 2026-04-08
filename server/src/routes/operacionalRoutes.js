@@ -24,5 +24,11 @@ router.get('/getCustos', OperacionalController.getCustos);
 // router.get('/getVacinas', OperacionalController.getVacinas);
 // router.get('/getAplicacaoVacina', OperacionalController.getAplicacaoVacina);
 
+//MÉTODOS PATCH
+router.patch('/updateAnimal/:id', OperacionalController.updateAnimal);
+
+//MÉTODOS DELETE
+router.delete('/animal/:id', OperacionalController.deleteAnimal);
+
 
 module.exports = router

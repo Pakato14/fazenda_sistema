@@ -34,4 +34,12 @@ export class OperacionalService {
     getOperacional(metodo: any): Observable<any> {
       return this.http.get(environment.apiUrl + metodo);
     }
+
+    updateAnimal(data: any, id: number): Observable<any> {
+    return this.http.patch(environment.apiUrl + 'updateAnimal/' + id, data)
+  }
+
+  deleteAnimal(id: number) {
+    return this.http.delete<any>(environment.apiUrl + 'animal/' + id)
+  }
 }
