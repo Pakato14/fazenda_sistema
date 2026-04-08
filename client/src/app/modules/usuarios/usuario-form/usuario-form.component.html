@@ -1,7 +1,7 @@
 <div class="card p-3">
   <h5>Novo Usuário</h5>
 
-  <form (ngSubmit)="salvar()">
+  <form #formCadastroUser="ngForm" (ngSubmit)="salvar()">
 
     <div class="mb-3">
       <label>Nome</label>

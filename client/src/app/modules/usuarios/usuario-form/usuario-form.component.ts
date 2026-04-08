@@ -57,7 +57,7 @@ export class UsuarioFormComponent implements OnInit {
       next: (res) => {
         this.toastr.success('Usuário cadastrado com sucesso!');
         this.formCadastroUser.reset();
-        this.router.navigate(['/dasboard']);
+        this.router.navigate(['/dashboard']);
       },
       error: (err) => {
         console.error(err);
