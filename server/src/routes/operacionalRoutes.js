@@ -15,7 +15,7 @@ router.post('/cadastroAplicacaoVacina', OperacionalController.registerAplicacaoV
 
 //MÉTODOS GET
 router.get('/getAnimais', OperacionalController.getAnimais);
-router.get('/getTiposCusto', OperacionalController.getTiposCusto);
+router.get('/getTipocusto', OperacionalController.getTiposCusto);
 router.get('/getRacoes', OperacionalController.getRacoes);
 router.get('/getLotes', OperacionalController.getLotes);
 router.get('/getCustos', OperacionalController.getCustos);
@@ -26,9 +26,11 @@ router.get('/getCustos', OperacionalController.getCustos);
 
 //MÉTODOS PATCH
 router.patch('/updateAnimal/:id', OperacionalController.updateAnimal);
+router.patch('/updateTipoCusto/:id', OperacionalController.updateTipoCusto);
 
 //MÉTODOS DELETE
 router.delete('/animal/:id', OperacionalController.deleteAnimal);
+router.delete('/tipocusto/:id', OperacionalController.deleteTipoCusto);
 
 
 module.exports = router

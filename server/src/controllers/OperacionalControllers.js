@@ -199,6 +199,23 @@ class OperacionalControllers {
     }
   }
 
+  static async updateTipoCusto(req, res) {
+    const id = req.params.id;
+    const updatedTipoCusto = req.body;
+
+    try {
+      const tipoCusto = await database.tipo_custo.findByPk(id);
+      if (!tipoCusto) {
+        return res.status(404).json({ message: "Tipo de custo não encontrado" });
+      }
+
+      await tipoCusto.update(updatedTipoCusto);
+      return res.status(200).json(tipoCusto);
+    } catch (error) {
+      return res.status(500).json(error.message);
+    }
+  }
+
 
   //MÉTODOS DE EXCLUIR
   static async deleteAnimal(req, res) {
@@ -217,6 +234,21 @@ class OperacionalControllers {
     }
   }
 
+  static async deleteTipoCusto(req, res) {
+    const id = req.params.id;
+
+    try {
+      const tipoCusto = await database.tipo_custo.findByPk(id);
+      if (!tipoCusto) {
+        return res.status(404).json({ message: "Tipo de custo não encontrado" });
+      }
+
+      await tipoCusto.destroy();
+      return res.status(200).json({ message: "Tipo de custo excluído com sucesso" });
+    } catch (error) {
+      return res.status(500).json(error.message);
+    }
+  }
 
 }
 

@@ -4,42 +4,49 @@ import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class OperacionalService {
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   register(data: any): Observable<any> {
-      return this.http.post(environment.apiUrl + 'cadastroAnimal', data);
-    }
+    return this.http.post(environment.apiUrl + 'cadastroAnimal', data);
+  }
 
   registerTipoCusto(data: any): Observable<any> {
     console.log('dados service', data);
-      return this.http.post(environment.apiUrl + 'cadastroTipoCusto', data);
-    }
+    return this.http.post(environment.apiUrl + 'cadastroTipoCusto', data);
+  }
 
   registerCusto(data: any): Observable<any> {
-      return this.http.post(environment.apiUrl + 'cadastroCustos', data);
-    }
+    return this.http.post(environment.apiUrl + 'cadastroCustos', data);
+  }
 
   registerTipoVacina(data: any): Observable<any> {
-      return this.http.post(environment.apiUrl + 'cadastroVacina', data);
-    }
+    return this.http.post(environment.apiUrl + 'cadastroVacina', data);
+  }
 
   registerTipoRacao(data: any): Observable<any> {
-      return this.http.post(environment.apiUrl + 'cadastroRacao', data);
-    }
+    return this.http.post(environment.apiUrl + 'cadastroRacao', data);
+  }
 
-    getOperacional(metodo: any): Observable<any> {
-      return this.http.get(environment.apiUrl + metodo);
-    }
+  getOperacional(metodo: any): Observable<any> {
+    return this.http.get(environment.apiUrl + metodo);
+  }
 
-    updateAnimal(data: any, id: number): Observable<any> {
-    return this.http.patch(environment.apiUrl + 'updateAnimal/' + id, data)
+  updateAnimal(data: any, id: number): Observable<any> {
+    return this.http.patch(environment.apiUrl + 'updateAnimal/' + id, data);
   }
 
   deleteAnimal(id: number) {
-    return this.http.delete<any>(environment.apiUrl + 'animal/' + id)
+    return this.http.delete<any>(environment.apiUrl + 'animal/' + id);
+  }
+
+  updateTipoCusto(data: any, id: number): Observable<any> {
+    return this.http.patch(environment.apiUrl + 'updateTipoCusto/' + id, data);
+  }
+
+  deleteTipoCusto(id: number) {
+    return this.http.delete<any>(environment.apiUrl + 'tipoCusto/' + id);
   }
 }
