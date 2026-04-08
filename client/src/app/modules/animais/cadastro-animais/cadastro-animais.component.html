@@ -42,15 +42,15 @@
   <table class="table table-striped">
     <thead>
       <tr>
-        <th>ID</th>
+        <th class="text-center fw-bold">ID</th>
         <th>Tipo</th>
         <th>Ações</th>
       </tr>
     </thead>
 
     <tbody>
-      <tr *ngFor="let item of listaPaginada">
-        <td>{{ item.id }}</td>
+      <tr *ngFor="let item of listaPaginada; let i = index">
+        <td class="text-center fw-bold">{{ i + 1 }}</td>
         <td>{{ item.tipo }}</td>
         <td>
           <button class="btn btn-primary btn-sm me-2" (click)="editar(item)">
