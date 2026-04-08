@@ -20,8 +20,8 @@
         <td>{{ u.nome }}</td>
         <td>{{ u.user_email }}</td>
         <td>
-          <button class="btn btn-sm btn-warning">Editar</button>
-          <button class="btn btn-sm btn-danger">Excluir</button>
+          <button class="btn btn-sm btn-warning" (click)="editar(u.id)">Editar</button>
+          <button class="btn btn-sm btn-danger" (click)="deletar(u.id)">Excluir</button>
         </td>
       </tr>
     </tbody>

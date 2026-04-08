@@ -91,6 +91,10 @@ export class UserService {
       return this.http.get(environment.apiUrl + metodo)
     }
 
+    pegarUserPorId(id: number): Observable<any> {
+      return this.http.get(environment.apiUrl + 'user/' + id)
+    }
+
     resetPin(data:any): Observable<any> {
       return this.http.post(environment.apiUrl + 'newPin',  data)
     }

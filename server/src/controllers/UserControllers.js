@@ -232,6 +232,43 @@ class UserController {
     }
   }
 
+  static async pegaUserPorId(req, res) {
+    const { id } = req.params;
+    try {
+      const getUser = await database.user.findByPk(id, {
+        attributes: [
+          "id",
+          "nome",
+          "user_name",
+          "user_email",
+          "user_active",
+          "cpf",
+          "perfil_id",
+          "empresa_id",
+        ],
+        include: [
+          {
+            association: "ass_user_perfil",
+            attributes: ["id", "perfil"],
+          },
+          {
+            association: "ass_user_empresa",
+            attributes: ["id", "nome", "cnpj"],
+          },
+        ],
+      });
+
+      if (!getUser) {
+        return res.status(404).json({ message: "Usuário não encontrado" });
+      }
+
+      return res.status(200).json(getUser);
+    } catch (error) {
+      console.error(error);
+      return res.status(500).json({ message: "Erro ao buscar usuário" });
+    }
+  }
+
   static async atualizaUser(req, res) {
     const { id } = req.params;
     const user = req.body;

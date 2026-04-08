@@ -22,6 +22,7 @@ const routes: Routes = [
   { path: 'reset', component: ResetSenhaComponent },
   { path: 'usuarios', component: UsuariosComponent },
   { path: 'newuser', component: UsuarioFormComponent },
+  { path: 'edituser/:id', component: UsuarioFormComponent },
   { path: 'empresas', component: EmpresasComponent },
   { path: 'newcompany', component: EmpresaFormComponent },
   { path: 'animais', component: CadastroAnimaisComponent },
