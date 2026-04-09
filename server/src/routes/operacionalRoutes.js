@@ -21,16 +21,20 @@ router.get('/getLotes', OperacionalController.getLotes);
 router.get('/getCustos', OperacionalController.getCustos);
 // router.get('/getMovimentacaoAnimal', OperacionalController.getMovimentacaoAnimal);
 // router.get('/getConsumoRacao', OperacionalController.getConsumoRacao);
-// router.get('/getVacinas', OperacionalController.getVacinas);
+router.get('/getVacinas', OperacionalController.getVacinas);
 // router.get('/getAplicacaoVacina', OperacionalController.getAplicacaoVacina);
 
 //MÉTODOS PATCH
 router.patch('/updateAnimal/:id', OperacionalController.updateAnimal);
 router.patch('/updateTipoCusto/:id', OperacionalController.updateTipoCusto);
+router.patch('/updateVacina/:id', OperacionalController.updateVacina);
+router.patch('/updateRacao/:id', OperacionalController.updateRacao);
 
 //MÉTODOS DELETE
 router.delete('/animal/:id', OperacionalController.deleteAnimal);
 router.delete('/tipocusto/:id', OperacionalController.deleteTipoCusto);
+router.delete('/vacina/:id', OperacionalController.deleteVacina);
+router.delete('/racao/:id', OperacionalController.deleteRacao);
 
 
 module.exports = router

@@ -49,4 +49,22 @@ export class OperacionalService {
   deleteTipoCusto(id: number) {
     return this.http.delete<any>(environment.apiUrl + 'tipoCusto/' + id);
   }
+
+  updateVacina(data: any, id: number): Observable<any> {
+    return this.http.patch(environment.apiUrl + 'updateVacina/' + id, data);
+  }
+
+  deleteVacina(id: number) {
+    return this.http.delete<any>(environment.apiUrl + 'vacina/' + id);
+  }
+
+  updateRacao(data: any, id: number): Observable<any> {
+    return this.http.patch(environment.apiUrl + 'updateRacao/' + id, data);
+  }
+
+  deleteRacao(id: number) {
+    return this.http.delete<any>(environment.apiUrl + 'racao/' + id);
+  }
+
+
 }

@@ -25,9 +25,9 @@ class OperacionalControllers {
 
   static async registerRacao(req, res) {
     const newFood = req.body;
-    // console.log('newFood', newFood);
+    console.log('newFood', newFood);
     try {
-      const novaRacao = await database.racaos.create(newFood);
+      const novaRacao = await database.racao.create(newFood);
       return res.status(200).json(novaRacao);
     } catch (error) {
       return res.status(500).json(error.message);
@@ -82,7 +82,7 @@ class OperacionalControllers {
     const newVaccine = req.body;
     // console.log('newVaccine', newVaccine);
     try {
-      const novaVacina = await database.vacinas.create(newVaccine);
+      const novaVacina = await database.vacina.create(newVaccine);
       return res.status(200).json(novaVacina);
     } catch (error) {
       return res.status(500).json(error.message);
@@ -179,6 +179,19 @@ class OperacionalControllers {
     }
   }
 
+  static async getVacinas(req, res) {
+    try {
+      const vacinas = await database.vacina.findAll({
+        order: [["nome", "ASC"]],
+        attributes: ["id", "nome", "dias_aplicacao"],        
+      });
+
+      return res.status(200).json(vacinas);
+    } catch (error) {
+      return res.status(500).json(error.message);
+    }
+  }
+
 
   //MÉTODOS UPDATE
 
@@ -216,6 +229,40 @@ class OperacionalControllers {
     }
   }
 
+  static async updateVacina(req, res) {
+    const id = req.params.id;
+    const updatedVacina = req.body;
+
+    try {
+      const vacina = await database.vacina.findByPk(id);
+      if (!vacina) {
+        return res.status(404).json({ message: "Vacina não encontrada" });
+      }
+
+      await vacina.update(updatedVacina);
+      return res.status(200).json(vacina);
+    } catch (error) {
+      return res.status(500).json(error.message);
+    }
+  }
+
+  static async updateRacao(req, res) {
+    const id = req.params.id;
+    const updatedRacao = req.body;
+
+    try {
+      const racao = await database.racao.findByPk(id);
+      if (!racao) {
+        return res.status(404).json({ message: "Ração não encontrada" });
+      }
+
+      await racao.update(updatedRacao);
+      return res.status(200).json(racao);
+    } catch (error) {
+      return res.status(500).json(error.message);
+    }
+  }
+
 
   //MÉTODOS DE EXCLUIR
   static async deleteAnimal(req, res) {
@@ -245,6 +292,38 @@ class OperacionalControllers {
 
       await tipoCusto.destroy();
       return res.status(200).json({ message: "Tipo de custo excluído com sucesso" });
+    } catch (error) {
+      return res.status(500).json(error.message);
+    }
+  }
+
+  static async deleteVacina(req, res) {
+    const id = req.params.id;
+
+    try {
+      const vacina = await database.vacina.findByPk(id);
+      if (!vacina) {
+        return res.status(404).json({ message: "Vacina não encontrada" });
+      }
+
+      await vacina.destroy();
+      return res.status(200).json({ message: "Vacina excluída com sucesso" });
+    } catch (error) {
+      return res.status(500).json(error.message);
+    }
+  }
+
+  static async deleteRacao(req, res) {
+    const id = req.params.id;
+
+    try {
+      const racao = await database.racao.findByPk(id);
+      if (!racao) {
+        return res.status(404).json({ message: "Ração não encontrada" });
+      }
+
+      await racao.destroy();
+      return res.status(200).json({ message: "Ração excluída com sucesso" });
     } catch (error) {
       return res.status(500).json(error.message);
     }
