@@ -25,7 +25,7 @@ class OperacionalControllers {
 
   static async registerRacao(req, res) {
     const newFood = req.body;
-    console.log('newFood', newFood);
+    // console.log('newFood', newFood);
     try {
       const novaRacao = await database.racao.create(newFood);
       return res.status(200).json(novaRacao);
@@ -129,7 +129,7 @@ class OperacionalControllers {
 
   static async getRacoes(req, res) {
     try {
-      const racoes = await database.racaos.findAll({
+      const racoes = await database.racao.findAll({
         order: [["tipo_racao", "ASC"]],
         attributes: ["id", "tipo_racao", "custo_por_kg"],
       });
