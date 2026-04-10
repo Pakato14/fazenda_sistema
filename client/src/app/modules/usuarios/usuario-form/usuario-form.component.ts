@@ -90,6 +90,7 @@ export class UsuarioFormComponent implements OnInit {
         }
       });
     } else {
+      this.user.user_password = this.service.CriptografarMD5(this.user.user_password);
       this.service.cadastrar_users(this.user).subscribe({
         next: (res) => {
           this.toastr.success('Usuário cadastrado com sucesso!');
