@@ -10,7 +10,7 @@ export class DashboardService {
 
   constructor(private http: HttpClient) { }
 
-  getResumo(loteId: any): Observable<any> {
+  getResumo(): Observable<any> {
       return this.http.get(environment.apiUrl + 'resumo');
     }
 }

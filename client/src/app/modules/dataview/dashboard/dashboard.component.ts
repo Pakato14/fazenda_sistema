@@ -21,9 +21,8 @@ export class DashboardComponent implements OnInit {
   }
 
   loadData() {
-    const loteId = 1;
 
-    this.service.getResumo(loteId).subscribe(res => {
+    this.service.getResumo().subscribe(res => {
       this.resumo = res;
 
       this.initPieChart(res);
