@@ -49,7 +49,7 @@ class OperacionalControllers {
     const newCoast = req.body;
     // console.log('newCoast', newCoast);
     try {
-      const novoCusto = await database.custos.create(newCoast);
+      const novoCusto = await database.custo.create(newCoast);
       return res.status(200).json(novoCusto);
     } catch (error) {
       return res.status(500).json(error.message);
@@ -143,8 +143,8 @@ class OperacionalControllers {
   static async getLotes(req, res) {
     try {
       const lotes = await database.lote.findAll({
-        order: [["numero_registro", "ASC"]],
-        attributes: ["id", "numero_registro", "nome_lote", "data_nascimento", "valor_cabeca", "quantidade_inicial", "observacao"],
+        order: [["nome_lote", "ASC"]],
+        attributes: ["id", "nome_lote", "data_nascimento", "valor_cabeca", "quantidade_inicial", "observacao"],
         include: [
           { association: "ass_lote_animal",
             attributes: ["id", "tipo"]
@@ -165,7 +165,7 @@ class OperacionalControllers {
         attributes: ["id", "tipo", "descricao", "valor", "data"],
         include: [
           { association: "ass_custo_lote",
-            attributes: ["id", "numero_registro", "nome_lote", "data_nascimento", "valor_cabeca", "quantidade_inicial", "observacao"],
+            attributes: ["id", "nome_lote", "data_nascimento", "valor_cabeca", "quantidade_inicial", "observacao"],
           },
           { association: "ass_custo_tipo_custo",
             attributes: ["id", "nome"],

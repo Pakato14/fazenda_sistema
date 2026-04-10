@@ -1,7 +1,7 @@
 export class Lote {
   constructor(
     public id?: number,
-    public numero_registro?: string,
+    // public numero_registro?: string,
     public animal_id?: number,
     public nome_lote?: string,
     public data_nascimento?: Date,

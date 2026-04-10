@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   lote.init({
-    numero_registro: DataTypes.STRING,
+    // numero_registro: DataTypes.STRING,
     nome_lote: DataTypes.STRING,
     data_nascimento: DataTypes.DATE,
     quantidade_inicial: DataTypes.INTEGER,

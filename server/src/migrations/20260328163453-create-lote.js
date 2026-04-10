@@ -9,9 +9,9 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      numero_registro: {
-        type: Sequelize.STRING
-      },
+      // numero_registro: {
+      //   type: Sequelize.STRING
+      // },
       animal_id: {
         allowNull: false,
         type: Sequelize.INTEGER,

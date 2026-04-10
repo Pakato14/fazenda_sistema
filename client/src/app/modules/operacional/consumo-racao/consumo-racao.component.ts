@@ -33,7 +33,6 @@ export class ConsumoRacaoComponent implements OnInit {
     this.operacionalService.getOperacional('getLotes').subscribe({
       next: (res) => {
         this.listaLotes = res;
-        console.log('lotes', res);
       },
       error: (err) => {
         console.error(err.error.message);
@@ -46,7 +45,6 @@ export class ConsumoRacaoComponent implements OnInit {
     this.operacionalService.getOperacional('getRacoes').subscribe({
       next: (res) => {
         this.listaRacoes = res;
-        console.log('racaos', res);
       },
       error: (err) => {
         console.error(err.error.message);

@@ -41,6 +41,7 @@ export class MovimentacaoComponent implements OnInit {
   }
 
   salvar() {
+    console.log('movimentacao', this.movimentacao);
     this.operacionalService.registerControleAnimais(this.movimentacao).subscribe({
       next: (res) => {
         this.toastr.success('Movimentação cadastrada com sucesso!');
