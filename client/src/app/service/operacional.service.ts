@@ -30,6 +30,22 @@ export class OperacionalService {
     return this.http.post(environment.apiUrl + 'cadastroRacao', data);
   }
 
+  registerLote(data: any): Observable<any> {
+    return this.http.post(environment.apiUrl + 'cadastroLote', data);
+  }
+
+  registerControleAnimais(data: any): Observable<any> {
+    return this.http.post(environment.apiUrl + 'cadastroMovimentacaoAnimal', data);
+  }
+
+  registerConsumoRacao(data: any): Observable<any> {
+    return this.http.post(environment.apiUrl + 'cadastroConsumoRacao', data);
+  }
+
+  registerAplicacaoVacina(data: any): Observable<any> {
+    return this.http.post(environment.apiUrl + 'cadastroAplicacaoVacina', data);
+  }
+
   getOperacional(metodo: any): Observable<any> {
     return this.http.get(environment.apiUrl + metodo);
   }

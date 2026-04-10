@@ -43,7 +43,7 @@ export class CadastroCustoComponent implements OnInit {
   }
 
   getTipoCusto() {
-    this.operacionalService.getOperacional('getTiposCusto').subscribe({
+    this.operacionalService.getOperacional('getTipoCusto').subscribe({
       next: (res) => {
         this.listaTipoCusto = res;
         console.log('tipos custo', res);

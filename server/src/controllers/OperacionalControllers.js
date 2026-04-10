@@ -38,7 +38,7 @@ class OperacionalControllers {
     const newLot = req.body;
     // console.log('newLot', newLot);
     try {
-      const novoLote = await database.lotes.create(newLot);
+      const novoLote = await database.lote.create(newLot);
       return res.status(200).json(novoLote);
     } catch (error) {
       return res.status(500).json(error.message);
@@ -71,7 +71,7 @@ class OperacionalControllers {
     const newFoodConsumption = req.body;
     // console.log('newFoodConsumption', newFoodConsumption);
     try {
-      const novoConsumoRacao = await database.consumo_racaoa.create(newFoodConsumption);
+      const novoConsumoRacao = await database.consumo_racao.create(newFoodConsumption);
       return res.status(200).json(novoConsumoRacao);
     } catch (error) {
       return res.status(500).json(error.message);
@@ -93,7 +93,7 @@ class OperacionalControllers {
     const newVaccineApplication = req.body;
     // console.log('newVaccineApplication', newVaccineApplication);
     try {
-      const novaAplicacaoVacina = await database.aplicacao_vacinas.create(newVaccineApplication);
+      const novaAplicacaoVacina = await database.aplicacao_vacina.create(newVaccineApplication);
       return res.status(200).json(novaAplicacaoVacina);
     } catch (error) {
       return res.status(500).json(error.message);
@@ -142,7 +142,7 @@ class OperacionalControllers {
 
   static async getLotes(req, res) {
     try {
-      const lotes = await database.lotes.findAll({
+      const lotes = await database.lote.findAll({
         order: [["numero_registro", "ASC"]],
         attributes: ["id", "numero_registro", "nome_lote", "data_nascimento", "valor_cabeca", "quantidade_inicial", "observacao"],
         include: [

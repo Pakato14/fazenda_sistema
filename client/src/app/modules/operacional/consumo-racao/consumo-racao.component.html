@@ -1,1 +1,34 @@
-<p>consumo-racao works!</p>
+<div class="card p-3">
+  <h5>Cadastro de Consumo de Ração</h5>
+
+  <form #formConsumoRacao="ngForm">
+
+    <div class="mb-3">
+      <label>Data</label>
+      <input type="date" #data="ngModel" [(ngModel)]="racao.data" name="data" class="form-control">
+    </div>
+
+    <div class="mb-3">
+      <label>Quantidade (Kg)</label>
+      <input type="number" #quantidade_kg="ngModel" [(ngModel)]="racao.quantidade_kg" name="quantidade_kg" class="form-control">
+    </div>
+
+    <div class="mb-3">
+      <label for="lote_id">Lote</label>
+      <select name="lote_id" id="lote_id" [(ngModel)]="racao.lote_id" #lote_id="ngModel"  class="form-control">
+        <option value="">Selecione</option>
+        <option *ngFor="let lote of listaLotes" [value]=lote.id>{{ lote.nome_lote }}</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label for="tipo_racao_id">Tipo de Ração</label>
+      <select name="tipo_racao_id" id="tipo_racao_id" [(ngModel)]="racao.tipo_racao_id" #tipo_racao_id="ngModel"  class="form-control">
+        <option value="">Selecione</option>
+        <option *ngFor="let racao of listaRacoes" [value]=racao.id>{{ racao.tipo_racao }}</option>
+      </select>
+    </div>
+
+    <button class="btn btn-success" (click)="salvar()">Salvar</button>
+  </form>
+</div>

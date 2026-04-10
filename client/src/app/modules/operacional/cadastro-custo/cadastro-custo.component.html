@@ -1,5 +1,5 @@
 <div class="card p-3">
-  <h5>Cadastro tipo de Criação</h5>
+  <h5>Cadastro de Custo</h5>
 
   <form #formCadastroCustos="ngForm">
 
@@ -27,7 +27,7 @@
       <label for="lote_id">Lote</label>
       <select name="lote_id" id="lote_id" [(ngModel)]="custo.lote_id" #lote_id="ngModel"  class="form-control">
         <option value="">Selecione</option>
-        <option *ngFor="let lote of listaLotes" [value]=lote.id>{{ lote.nome }}</option>
+        <option *ngFor="let lote of listaLotes" [value]=lote.id>{{ lote.nome_lote }}</option>
       </select>
     </div>
 

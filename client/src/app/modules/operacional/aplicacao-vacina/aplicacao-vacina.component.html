@@ -1,1 +1,34 @@
-<p>aplicacao-vacina works!</p>
+<div class="card p-3">
+  <h5>Cadastro de Aplicação de Vacina</h5>
+
+  <form #formAplicacaoVacina="ngForm">
+
+    <div class="mb-3">
+      <label>Data de Aplicação</label>
+      <input type="date" #data="ngModel" [(ngModel)]="vacina.data_aplicacao" name="data" class="form-control">
+    </div>
+
+    <div class="mb-3">
+      <label for="lote_id">Lote</label>
+      <select name="lote_id" id="lote_id" [(ngModel)]="vacina.lote_id" #lote_id="ngModel"  class="form-control">
+        <option value="">Selecione</option>
+        <option *ngFor="let lote of listaLotes" [value]=lote.id>{{ lote.nome_lote }}</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label for="tipo_vacina_id">Tipo de Vacina</label>
+      <select name="tipo_vacina_id" id="tipo_vacina_id" [(ngModel)]="vacina.vacina_id" #tipo_vacina_id="ngModel"  class="form-control">
+        <option value="">Selecione</option>
+        <option *ngFor="let vacina of listaVacinas" [value]=vacina.id>{{ vacina.nome }}</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label>Observacao</label>
+      <textarea name="observacao" id="observacao" [(ngModel)]="vacina.observacao" class="form-control"></textarea>
+    </div>
+
+    <button class="btn btn-success" (click)="salvar()">Salvar</button>
+  </form>
+</div>

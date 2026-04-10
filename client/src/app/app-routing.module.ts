@@ -13,7 +13,7 @@ import { CadastroVacinaComponent } from './modules/animais/cadastro-vacina/cadas
 import { CadastroRacaoComponent } from './modules/animais/cadastro-racao/cadastro-racao.component';
 import { ConsumoRacaoComponent } from './modules/operacional/consumo-racao/consumo-racao.component';
 import { AplicacaoVacinaComponent } from './modules/operacional/aplicacao-vacina/aplicacao-vacina.component';
-import { CadastroLoteComponent } from './modules/animais/cadastro-lote/cadastro-lote.component';
+import { CadastroLoteComponent } from './modules/operacional/cadastro-lote/cadastro-lote.component';
 import { MovimentacaoComponent } from './modules/operacional/movimentacao/movimentacao.component';
 import { CadastroCustoComponent } from './modules/operacional/cadastro-custo/cadastro-custo.component';
 

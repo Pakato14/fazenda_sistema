@@ -20,7 +20,7 @@ import { ResetSenhaComponent } from './modules/usuarios/reset-senha/reset-senha.
 import { CadastroAnimaisComponent } from './modules/animais/cadastro-animais/cadastro-animais.component';
 import { RacaoComponent } from './modules/animais/racao/racao.component';
 import { ControleAnimaisComponent } from './modules/animais/controle-animais/controle-animais.component';
-import { CadastroLoteComponent } from './modules/animais/cadastro-lote/cadastro-lote.component';
+import { CadastroLoteComponent } from './modules/operacional/cadastro-lote/cadastro-lote.component';
 import { NgxMaskModule } from 'ngx-mask';
 import { CadastroVacinaComponent } from './modules/animais/cadastro-vacina/cadastro-vacina.component';
 import { CadastroRacaoComponent } from './modules/animais/cadastro-racao/cadastro-racao.component';

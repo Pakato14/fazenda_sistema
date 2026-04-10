@@ -108,7 +108,7 @@ export class CadastroRacaoComponent implements OnInit {
     this.operacionalService.getOperacional('getRacoes').subscribe({
       next: (res) => {
         this.listaRacao = res;
-        console.log('racoes', res);
+        // console.log('racoes', res);
       },
       error: (err) => {
         console.error(err.error.message);

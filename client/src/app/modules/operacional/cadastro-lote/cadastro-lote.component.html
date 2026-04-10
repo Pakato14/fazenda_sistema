@@ -1,0 +1,46 @@
+<div class="card p-3">
+  <h5>Cadastro tipo de Criação</h5>
+
+  <form #formCadastroLotes="ngForm">
+
+    <div class="mb-3">
+      <label>Registro</label>
+      <input type="number" #numero_registro="ngModel" [(ngModel)]="lote.numero_registro" name="numero_registro" class="form-control">
+    </div>
+
+    <div class="mb-3">
+      <label for="animal_id">Tipo de Animal</label>
+      <select name="animal_id" id="animal_id" [(ngModel)]="lote.animal_id" #animal_id="ngModel"  class="form-control">
+        <option value="">Selecione</option>
+        <option *ngFor="let animal of listaAnimais" [value]=animal.id>{{ animal.tipo }}</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label>Nome do Lote</label>
+      <input #nome_lote="ngModel" [(ngModel)]="lote.nome_lote" name="nome_lote" class="form-control">
+    </div>
+
+    <div class="mb-3">
+      <label>Data de Nascimento</label>
+      <input type="date" #data_nascimento="ngModel" [(ngModel)]="lote.data_nascimento" name="data_nascimento" class="form-control">
+    </div>
+
+    <div class="mb-3">
+      <label>Quantidade Inicial</label>
+      <input type="number" #quntidade_inicial="ngModel" [(ngModel)]="lote.quntidade_inicial" name="quntidade_inicial" class="form-control">
+    </div>
+
+    <div class="mb-3">
+      <label>Valor por Cabeça</label>
+      <input type="number" #valor_cabeca="ngModel" [(ngModel)]="lote.valor_cabeca" name="valor_cabeca" class="form-control">
+    </div>
+
+    <div class="mb-3">
+      <label>Observação</label>
+      <textarea name="observacao" id="observacao" class="form-control" #observacao="ngModel" [(ngModel)]="lote.observacao"></textarea>
+    </div>
+
+    <button class="btn btn-success" (click)="salvar()">Salvar</button>
+  </form>
+</div>

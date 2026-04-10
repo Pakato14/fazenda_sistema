@@ -1,1 +1,36 @@
-<p>movimentacao works!</p>
+<div class="card p-3">
+  <h5>Cadastro tipo de Criação</h5>
+
+  <form #formMovimentacao="ngForm">
+
+    <div class="mb-3">
+      <label>Tipo de Movimentação</label>
+      <input type="text" #tipo_movimentacao="ngModel" [(ngModel)]="movimentacao.tipo_movimentacao" name="tipo_movimentacao" class="form-control">
+    </div>
+
+    <div class="mb-3">
+      <label for="lote_id">Lote</label>
+      <select name="lote_id" id="lote_id" [(ngModel)]="movimentacao.lote_id" #lote_id="ngModel"  class="form-control">
+        <option value="">Selecione</option>
+        <option *ngFor="let lote of listaLotes" [value]=lote.id>{{ lote.nome_lote }}</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label>Quantidade</label>
+      <input type=number #quantidade="ngModel" [(ngModel)]="movimentacao.quantidade" name="quantidade" class="form-control">
+    </div>
+
+    <div class="mb-3">
+      <label>Data</label>
+      <input type="date" #data="ngModel" [(ngModel)]="movimentacao.data" name="data" class="form-control">
+    </div>
+
+    <div class="mb-3">
+      <label>Observação</label>
+      <textarea name="observacao" id="observacao" class="form-control" #observacao="ngModel" [(ngModel)]="movimentacao.observacao"></textarea>
+    </div>
+
+    <button class="btn btn-success" (click)="salvar()">Salvar</button>
+  </form>
+</div>
