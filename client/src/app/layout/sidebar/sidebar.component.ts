@@ -15,12 +15,19 @@ export class SidebarComponent implements OnInit {
 
   menu = [
     {
-      label: 'Cadastros',
-      icon: 'fa-folder',
+      label: 'Administração',
+      icon: 'fa-shield-alt',
       roles: [1],
       children: [
         { label: 'Usuários', route: '/usuarios', icon: 'fa-user' },
-        { label: 'Empresas', route: '/empresas', icon: 'fa-building' },
+        { label: 'Empresas', route: '/empresas', icon: 'fa-building' }
+      ],
+    },
+    {
+      label: 'Cadastros',
+      icon: 'fa-folder',
+      roles: [1,2,3],
+      children: [
         { label: 'Animais', route: '/animais', icon: 'fa-paw' },
         { label: 'Tipo de Custo', route: '/tipocusto', icon: 'fa-paw' },
         { label: 'Vacina', route: '/vacina', icon: 'fa-paw' },
