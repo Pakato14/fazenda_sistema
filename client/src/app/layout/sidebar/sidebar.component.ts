@@ -20,7 +20,7 @@ export class SidebarComponent implements OnInit {
       roles: [1],
       children: [
         { label: 'Usuários', route: '/usuarios', icon: 'fa-user' },
-        { label: 'Empresas', route: '/empresas', icon: 'fa-building' }
+        { label: 'Clientes', route: '/empresas', icon: 'fa-building' }
       ],
     },
     {
