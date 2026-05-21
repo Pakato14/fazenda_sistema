@@ -10,12 +10,15 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      racao.hasMany(models.consumo_racao, { foreignKey: 'tipo_racao_id', as: 'ass_racao_consumo_racao' });
+      racao.hasMany(models.racao_componentes, { foreignKey: 'racao_id', as: 'ass_racao_componentes' });
+      racao.hasMany(models.producao_racoes, { foreignKey: 'racao_id', as: 'ass_racoes_producao' });
     }
   }
   racao.init({
-    tipo_racao: DataTypes.STRING,
-    custo_por_kg: DataTypes.DECIMAL(10,2)
+    nome: DataTypes.STRING,
+    descricao: DataTypes.STRING,
+    custo_total_kg: DataTypes.DECIMAL(10,2),
+    ativa: DataTypes.BOOLEAN
   }, {
     sequelize,
     modelName: 'racao',

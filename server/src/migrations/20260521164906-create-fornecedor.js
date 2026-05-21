@@ -2,7 +2,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('racaos', {
+    await queryInterface.createTable('fornecedors', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -12,14 +12,8 @@ module.exports = {
       nome: {
         type: Sequelize.STRING
       },
-      descricao: {
+      cnpj: {
         type: Sequelize.STRING
-      },
-      custo_total_kg: {
-        type: Sequelize.DECIMAL(10,2)
-      },
-      ativa: {
-        type: Sequelize.BOOLEAN
       },
       createdAt: {
         allowNull: false,
@@ -32,6 +26,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('racaos');
+    await queryInterface.dropTable('fornecedors');
   }
 };
