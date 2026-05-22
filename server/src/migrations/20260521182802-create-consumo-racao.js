@@ -13,17 +13,25 @@ module.exports = {
         type: Sequelize.DATEONLY
       },
       quantidade_kg: {
-        type: Sequelize.DECIMAL
+        type: Sequelize.DECIMAL(10,2)
       },
       lote_id: {
         allowNull: false,
         type: Sequelize.INTEGER,
         references: { model: 'lotes', key: 'id' }
       },
-      tipo_racao_id: {
+      racao_id: {
         allowNull: false,
         type: Sequelize.INTEGER,
         references: { model: 'racaos', key: 'id' }
+      },
+      producao_racao_id: {
+        allowNull: false,
+        type: Sequelize.INTEGER,
+        references: { model: 'producao_racoes', key: 'id' }
+      },
+      custo_total: {
+        type: Sequelize.DECIMAL(10,2)
       },
       createdAt: {
         allowNull: false,

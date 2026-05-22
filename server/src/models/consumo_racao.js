@@ -11,12 +11,14 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       consumo_racao.belongsTo(models.lote, { foreignKey: 'lote_id', as: 'ass_consumo_racao_lote' });
-      consumo_racao.belongsTo(models.racao, { foreignKey: 'tipo_racao_id', as: 'ass_consumo_racao_racao' });
+      consumo_racao.belongsTo(models.racao, { foreignKey: 'racao_id', as: 'ass_consumo_racao_racao' });
+      consumo_racao.belongsTo(models.producao_racoes, { foreignKey: 'producao_racao_id', as: 'ass_consumo_racao_producao_racao' });
     }
   }
   consumo_racao.init({
     data: DataTypes.DATEONLY,
-    quantidade_kg: DataTypes.DECIMAL
+    quantidade_kg: DataTypes.DECIMAL(10,2),
+    custo_total: DataTypes.DECIMAL(10,2)
   }, {
     sequelize,
     modelName: 'consumo_racao',

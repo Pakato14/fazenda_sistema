@@ -9,13 +9,8 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      nome_componente_id: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        references: {
-          model: "nome_componente_racaos",
-          key: "id",
-        },
+      nome: {
+        type: Sequelize.STRING,
       },
       unidade_medida: {
         type: Sequelize.STRING,
@@ -25,15 +20,7 @@ module.exports = {
       },
       custo_unitario: {
         type: Sequelize.DECIMAL(10,2),
-      },
-      fornecedor_id: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        references: {
-          model: "fornecedors",
-          key: "id",
-        },
-      },
+      },      
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

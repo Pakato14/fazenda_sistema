@@ -29,6 +29,14 @@ module.exports = {
       data_compra: {
         type: Sequelize.DATEONLY
       },
+      fornecedor_id: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+          model: "fornecedors",
+          key: "id",
+        },
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

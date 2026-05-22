@@ -17,6 +17,9 @@ module.exports = {
           key: "id",
         },
       },
+      codigo_lote: {
+        type: Sequelize.STRING
+      },
       quantidade_produzida: {
         type: Sequelize.DECIMAL(10,2)
       },
@@ -25,6 +28,9 @@ module.exports = {
       },
       data_producao: {
         type: Sequelize.DATEONLY
+      },
+      status: {
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,

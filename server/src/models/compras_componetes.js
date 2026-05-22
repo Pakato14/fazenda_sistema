@@ -11,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       compras_componetes.belongsTo(models.componentes_racao, { foreignKey: 'componente_id', as: 'ass_compracomponente' });
+      compras_componetes.belongsTo(models.fornecedor, { foreignKey: 'fornecedor_id', as: 'ass_compras_fornecedor' });
     }
   }
   compras_componetes.init({

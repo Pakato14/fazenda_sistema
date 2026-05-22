@@ -15,6 +15,7 @@ module.exports = (sequelize, DataTypes) => {
       lote.hasMany(models.consumo_racao, { foreignKey: 'lote_id', as: 'ass_lote_consumo_racao' });
       lote.hasMany(models.custo, { foreignKey: 'lote_id', as: 'ass_lote_custo' });
       lote.hasMany(models.aplicacao_vacina, { foreignKey: 'lote_id', as: 'ass_lote_aplicacao_vacina' });
+      lote.hasMany(models.producao_racoes, { foreignKey: 'lote_id', as: 'ass_lote_producao_racoes' });
     }
   }
   lote.init({
@@ -23,6 +24,7 @@ module.exports = (sequelize, DataTypes) => {
     data_nascimento: DataTypes.DATE,
     quantidade_inicial: DataTypes.INTEGER,
     valor_cabeca: DataTypes.DECIMAL(10,2),
+    custo_total_lote: DataTypes.DECIMAL(10,2),
     observacao: DataTypes.STRING
   }, {
     sequelize,

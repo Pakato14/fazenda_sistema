@@ -29,6 +29,9 @@ module.exports = {
       valor_cabeca: {
         type: Sequelize.DECIMAL(10,2)
       },
+      custo_total_lote: {
+        type: Sequelize.DECIMAL(10,2)
+      },
       observacao: {
         type: Sequelize.STRING
       },
