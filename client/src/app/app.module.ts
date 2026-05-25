@@ -31,6 +31,8 @@ import { CadastroCustoComponent } from './modules/operacional/cadastro-custo/cad
 import { MovimentacaoComponent } from './modules/operacional/movimentacao/movimentacao.component';
 import { ConsumoRacaoComponent } from './modules/operacional/consumo-racao/consumo-racao.component';
 import { AplicacaoVacinaComponent } from './modules/operacional/aplicacao-vacina/aplicacao-vacina.component';
+import { FornecedorComponent } from './modules/operacional/fornecedor/fornecedor.component';
+import { FornecedorFormComponent } from './modules/operacional/fornecedor-form/fornecedor-form.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +57,9 @@ import { AplicacaoVacinaComponent } from './modules/operacional/aplicacao-vacina
     CadastroCustoComponent,
     MovimentacaoComponent,
     ConsumoRacaoComponent,
-    AplicacaoVacinaComponent
+    AplicacaoVacinaComponent,
+    FornecedorComponent,
+    FornecedorFormComponent
   ],
   imports: [
     BrowserModule,

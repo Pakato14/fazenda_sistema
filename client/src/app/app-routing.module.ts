@@ -16,6 +16,8 @@ import { AplicacaoVacinaComponent } from './modules/operacional/aplicacao-vacina
 import { CadastroLoteComponent } from './modules/operacional/cadastro-lote/cadastro-lote.component';
 import { MovimentacaoComponent } from './modules/operacional/movimentacao/movimentacao.component';
 import { CadastroCustoComponent } from './modules/operacional/cadastro-custo/cadastro-custo.component';
+import { FornecedorComponent } from './modules/operacional/fornecedor/fornecedor.component';
+import { FornecedorFormComponent } from './modules/operacional/fornecedor-form/fornecedor-form.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -37,6 +39,9 @@ const routes: Routes = [
   { path: 'consumoracao', component: ConsumoRacaoComponent },
   { path: 'aplicacaovacina', component: AplicacaoVacinaComponent },
   { path: 'custos', component: CadastroCustoComponent },
+  { path: 'fornecedores', component: FornecedorComponent },
+  { path: 'novofornecedor', component: FornecedorFormComponent },
+  { path: 'editfornecedor/:id', component: FornecedorFormComponent },
 ];
 
 @NgModule({
