@@ -15,6 +15,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   componentes_racao.init({
+    nome: DataTypes.STRING,
     unidade_medida: DataTypes.STRING,
     estoque_atual: DataTypes.DECIMAL(10,2),
     custo_unitario: DataTypes.DECIMAL(10,2)
