@@ -5,7 +5,12 @@
 
     <div class="mb-3">
       <label>Tipo</label>
-      <input #tipo_racao="ngModel" [(ngModel)]="racao.tipo_racao" name="tipo_racao" class="form-control">
+      <input #tipo_racao="ngModel" [(ngModel)]="racao.nome" name="tipo_racao" class="form-control">
+    </div>
+
+    <div class="mb-3">
+      <label>Descrição</label>
+      <textarea #descricao="ngModel" [(ngModel)]="racao.descricao" name="descricao" class="form-control"></textarea>
     </div>
 
     <div class="mb-3">

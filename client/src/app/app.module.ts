@@ -23,7 +23,7 @@ import { ControleAnimaisComponent } from './modules/animais/controle-animais/con
 import { CadastroLoteComponent } from './modules/operacional/cadastro-lote/cadastro-lote.component';
 import { NgxMaskModule } from 'ngx-mask';
 import { CadastroVacinaComponent } from './modules/animais/cadastro-vacina/cadastro-vacina.component';
-import { CadastroRacaoComponent } from './modules/animais/cadastro-racao/cadastro-racao.component';
+import { CadastroRacaoComponent } from './modules/racao/cadastro-racao/cadastro-racao.component';
 import { DashboardComponent } from './modules/dataview/dashboard/dashboard.component';
 import { CadastroTipocustosComponent } from './modules/animais/cadastro-tipocustos/cadastro-tipocustos.component';
 import { NgxApexchartsModule } from 'ngx-apexcharts';
@@ -33,6 +33,10 @@ import { ConsumoRacaoComponent } from './modules/operacional/consumo-racao/consu
 import { AplicacaoVacinaComponent } from './modules/operacional/aplicacao-vacina/aplicacao-vacina.component';
 import { FornecedorComponent } from './modules/operacional/fornecedor/fornecedor.component';
 import { FornecedorFormComponent } from './modules/operacional/fornecedor-form/fornecedor-form.component';
+import { HomeComponent } from './modules/racao/home/home.component';
+import { ComprasComponenteComponent } from './modules/racao/compras-componente/compras-componente.component';
+import { ComponentesRacaosComponent } from './modules/racao/componentes-racaos/componentes-racaos.component';
+import { RacaoComponentesComponent } from './modules/racao/racao-componentes/racao-componentes.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +63,11 @@ import { FornecedorFormComponent } from './modules/operacional/fornecedor-form/f
     ConsumoRacaoComponent,
     AplicacaoVacinaComponent,
     FornecedorComponent,
-    FornecedorFormComponent
+    FornecedorFormComponent,
+    HomeComponent,
+    ComprasComponenteComponent,
+    ComponentesRacaosComponent,
+    RacaoComponentesComponent
   ],
   imports: [
     BrowserModule,
