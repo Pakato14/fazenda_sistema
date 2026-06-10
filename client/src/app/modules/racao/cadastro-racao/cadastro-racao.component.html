@@ -15,16 +15,33 @@
 
     <div class="mb-3">
       <label>Custo por Kg</label>
-      <input type="number" #custo_por_kg="ngModel" [(ngModel)]="racao.custo_por_kg" name="custo_por_kg" class="form-control">
+      <input type="number" #custo_por_kg="ngModel" [(ngModel)]="racao.custo_total_kg" name="custo_por_kg"
+        class="form-control">
     </div>
 
-    <button type="button" class="btn btn-success me-2" (click)="salvar()">
-      {{ editando ? 'Atualizar' : 'Salvar' }}
-    </button>
+    <div class="card-footer bg-white border-0 d-flex justify-content-end gap-2">
 
-    <button *ngIf="editando" type="button" class="btn btn-secondary" (click)="cancelarEdicao()">
-      Cancelar
-    </button>
+  <button type="button" class="btn btn-success px-4" (click)="salvar()">
+    <i class="fas fa-check-circle me-2"></i>
+    {{ editando ? 'Atualizar' : 'Salvar' }}
+  </button>
+
+  <button *ngIf="editando"
+          type="button"
+          class="btn btn-light border px-4"
+          (click)="cancelarEdicao()">
+    <i class="fas fa-ban me-2"></i>
+    Cancelar
+  </button>
+
+  <button type="button"
+          class="btn btn-primary px-4"
+          (click)="menuRacao()">
+    <i class="fas fa-home me-2"></i>
+    Voltar
+  </button>
+
+</div>
   </form>
 </div>
 
@@ -35,18 +52,15 @@
 
   <!-- 🔍 FILTRO -->
   <div class="mb-3">
-    <input
-      type="text"
-      class="form-control"
-      placeholder="Pesquisar nome..."
-      [(ngModel)]="termoBusca">
+    <input type="text" class="form-control" placeholder="Pesquisar nome..." [(ngModel)]="termoBusca">
   </div>
 
   <table class="table table-striped">
     <thead>
       <tr>
         <th class="text-center fw-bold">#</th>
-        <th class="text-center">Tipo de Ração</th>
+        <th class="text-center">Nome da Ração</th>
+        <th class="text-center">Descrição da Ração</th>
         <th class="text-center">Custo por Kg</th>
         <th class="text-center">Ações</th>
       </tr>
@@ -54,17 +68,20 @@
 
     <tbody>
       <tr *ngFor="let item of listaPaginada; let i = index">
-        <td class="text-center fw-bold">{{ i + 1 }}</td>
-        <td class="text-center">{{ item.tipo_racao }}</td>
-        <td class="text-center">{{ item.custo_por_kg }}</td>
+        <td class="text-center align-middle fw-bold">{{ i + 1 }}</td>
+        <td class="text-center align-middle">{{ item.nome }}</td>
+        <td class="text-start align-middle">{{ item.descricao }}</td>
+        <td class="text-center align-middle">{{ item.custo_total_kg }}</td>
         <td class="text-center">
-          <button class="btn btn-primary btn-sm me-2" (click)="editar(item)">
-            Editar
-          </button>
+          <div class="d-flex justify-content-center gap-2">
+            <button class="btn btn-outline-primary btn-sm" (click)="editar(item)">
+              <i class="fas fa-edit me-1"></i> Editar
+            </button>
 
-          <button class="btn btn-danger btn-sm" (click)="excluir(item.id)">
-            Excluir
-          </button>
+            <button class="btn btn-outline-danger btn-sm" (click)="excluir(item.id)">
+              <i class="fas fa-trash me-1"></i> Excluir
+            </button>
+          </div>
         </td>
       </tr>
     </tbody>
@@ -80,9 +97,7 @@
         </button>
       </li>
 
-      <li
-        class="page-item"
-        *ngFor="let p of [].constructor(totalPaginas); let i = index"
+      <li class="page-item" *ngFor="let p of [].constructor(totalPaginas); let i = index"
         [class.active]="paginaAtual === i + 1">
 
         <button class="page-link" (click)="mudarPagina(i + 1)">
@@ -99,4 +114,3 @@
     </ul>
   </nav>
 </div>
-

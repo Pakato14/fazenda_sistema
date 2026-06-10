@@ -3,6 +3,7 @@ export class TipoRacao {
     public id?: number,
     public nome?: string,
     public descricao?: string,
-    public custo_por_kg?: number
+    public custo_total_kg?: number,
+    public ativa?: boolean,
   ) {}
 }

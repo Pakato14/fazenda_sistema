@@ -21,18 +21,7 @@ class OperacionalControllers {
       console.log('error', error);
       return res.status(500).json(error.message);
     }
-  }
-
-  static async registerRacao(req, res) {
-    const newFood = req.body;
-    // console.log('newFood', newFood);
-    try {
-      const novaRacao = await database.racao.create(newFood);
-      return res.status(200).json(novaRacao);
-    } catch (error) {
-      return res.status(500).json(error.message);
-    }
-  }
+  }  
 
   static async registerLote(req, res) {
     const newLot = req.body;
@@ -130,8 +119,8 @@ class OperacionalControllers {
   static async getRacoes(req, res) {
     try {
       const racoes = await database.racao.findAll({
-        order: [["tipo_racao", "ASC"]],
-        attributes: ["id", "tipo_racao", "custo_por_kg"],
+        order: [["nome", "ASC"]],
+        attributes: ["id", "nome", "custo_total_kg", "descricao", "ativa"],
       });
 
       return res.status(200).json(racoes);

@@ -46,6 +46,7 @@ export class CadastroRacaoComponent implements OnInit {
   }
 
   salvar() {
+    this.racao.ativa = true; // sempre ativa ao cadastrar/editar
     if (this.editando && this.racaoEditandoId) {
       // UPDATE
       this.operacionalService
@@ -92,6 +93,12 @@ export class CadastroRacaoComponent implements OnInit {
     this.formCadastroRacao.reset();
   }
 
+  menuRacao() {
+    this.resetForm();
+    this.formCadastroRacao.reset();
+    this.router.navigate(['homeracao']);
+  }
+
   excluir(id: number) {
     if (!confirm('Deseja realmente excluir este item?')) return;
 
@@ -120,7 +127,7 @@ export class CadastroRacaoComponent implements OnInit {
   // ===== FILTRO =====
   get listaFiltrada() {
     return this.listaRacao.filter((a) =>
-      a.tipo_racao.toLowerCase().includes(this.termoBusca.toLowerCase()),
+      a.nome.toLowerCase().includes(this.termoBusca.toLowerCase()),
     );
   }
 

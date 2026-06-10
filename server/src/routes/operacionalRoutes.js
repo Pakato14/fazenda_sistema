@@ -5,7 +5,6 @@ const router = Router();
 //MÉTODOS POST
 router.post('/cadastroAnimal', OperacionalController.register);
 router.post('/cadastroTipoCusto', OperacionalController.registerTipoCusto);
-router.post('/cadastroRacao', OperacionalController.registerRacao);
 router.post('/cadastroLote', OperacionalController.registerLote);
 router.post('/cadastroCustos', OperacionalController.registerCusto);
 router.post('/cadastroMovimentacaoAnimal', OperacionalController.registerMovimentacaoAnimal);

@@ -62,16 +62,16 @@ class RacaoController {
     }
   }
 
-  static async cadastraRacao(req, res) {
-    const novaRacao = req.body;
-    // console.log('novaRacao', novaRacao);
-    try {
-      const racao = await database.racao.create(novaRacao);
-      return res.status(200).json(racao);
-    } catch (error) {
-      return res.status(500).json(error.message);
+  static async registerRacao(req, res) {
+      const newFood = req.body;
+      console.log('newFood', newFood);
+      try {
+        const novaRacao = await database.racao.create(newFood);
+        return res.status(200).json(novaRacao);
+      } catch (error) {
+        return res.status(500).json(error.message);
+      }
     }
-  }
 
 }
 
