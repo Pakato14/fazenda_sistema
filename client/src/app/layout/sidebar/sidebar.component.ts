@@ -32,7 +32,7 @@ export class SidebarComponent implements OnInit {
         { label: 'Tipo de Custo', route: '/tipocusto', icon: 'fa-paw' },
         { label: 'Vacina', route: '/vacina', icon: 'fa-paw' },
         { label: 'Fornecedores', route: '/fornecedores', icon: 'fa-paw' },
-        { label: 'Ração', route: '/racao', icon: 'fa-paw' },
+        { label: 'Ração', route: '/homeracao', icon: 'fa-paw' },
       ],
     },
     {

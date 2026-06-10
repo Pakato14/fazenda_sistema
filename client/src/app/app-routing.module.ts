@@ -18,6 +18,10 @@ import { MovimentacaoComponent } from './modules/operacional/movimentacao/movime
 import { CadastroCustoComponent } from './modules/operacional/cadastro-custo/cadastro-custo.component';
 import { FornecedorComponent } from './modules/operacional/fornecedor/fornecedor.component';
 import { FornecedorFormComponent } from './modules/operacional/fornecedor-form/fornecedor-form.component';
+import { HomeComponent } from './modules/racao/home/home.component';
+import { ComponentesRacaosComponent } from './modules/racao/componentes-racaos/componentes-racaos.component';
+import { ComprasComponenteComponent } from './modules/racao/compras-componente/compras-componente.component';
+import { RacaoComponentesComponent } from './modules/racao/racao-componentes/racao-componentes.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -32,11 +36,15 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'tipocusto', component: CadastroTipocustosComponent },
   { path: 'vacina', component: CadastroVacinaComponent },
+  { path: 'homeracao', component: HomeComponent },
   { path: 'racao', component: CadastroRacaoComponent },
+  { path: 'componenteracao', component: ComponentesRacaosComponent },
+  { path: 'comprasracao', component: ComprasComponenteComponent },
+  { path: 'montar-racao', component: RacaoComponentesComponent },
+  { path: 'consumoracao', component: ConsumoRacaoComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'cadastrolotes', component: CadastroLoteComponent },
   { path: 'movimentacao', component: MovimentacaoComponent },
-  { path: 'consumoracao', component: ConsumoRacaoComponent },
   { path: 'aplicacaovacina', component: AplicacaoVacinaComponent },
   { path: 'custos', component: CadastroCustoComponent },
   { path: 'fornecedores', component: FornecedorComponent },
